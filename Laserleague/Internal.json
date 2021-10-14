@@ -801,7 +801,7 @@
             "children": [
               {
                 "ƒ.Node": {
-                  "name": "Agent 1",
+                  "name": "Agent1",
                   "components": {
                     "ComponentMesh": [
                       {
@@ -842,7 +842,7 @@
               },
               {
                 "ƒ.Node": {
-                  "name": "Agent 2",
+                  "name": "Agent2",
                   "components": {
                     "ComponentMesh": [
                       {
