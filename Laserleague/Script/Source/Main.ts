@@ -31,13 +31,17 @@ namespace Script {
     let graph: ƒ.Node = viewport.getBranch();
 
     let laser: ƒ.Node = graph.getChildrenByName("Lasers")[0].getChildrenByName("LaserRed")[0];
-    let agentRed: ƒ.Node = graph.getChildrenByName("AgentRed")[0];
+    let agent: ƒ.Node = graph.getChildrenByName("AgentRed")[0];
 
     
-    transformAgent = agentRed.getComponent(ƒ.ComponentTransform).mtxLocal;
-    transformLaser = laser.getComponent(ƒ.ComponentTransform).mtxLocal.translate(transformAgent.translation);
-    
+    transformAgent = agent.getComponent(ƒ.ComponentTransform).mtxLocal;
+    transformLaser = laser.getComponent(ƒ.ComponentTransform).mtxLocal;
 
+    transformLaser.translateX(transformAgent.translation.x);
+    transformLaser.translateY(transformAgent.translation.y);
+    transformLaser.translateZ(transformAgent.translation.z);
+    
+    
 
   }
 }
