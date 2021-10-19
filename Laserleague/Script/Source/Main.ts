@@ -20,10 +20,12 @@ namespace Script {
 
   function update(_event: Event): void {
     // ƒ.Physics.world.simulate();  // if physics is included and used
-    transformLaser.rotateZ(0.0002);
+    transformLaser.rotateZ(2);
     viewport.draw();
     ƒ.AudioManager.default.update();
   }
+
+
   function placeLaserRed(): void{
 
     let graph: ƒ.Node = viewport.getBranch();
@@ -31,10 +33,10 @@ namespace Script {
     let laser: ƒ.Node = graph.getChildrenByName("Lasers")[0].getChildrenByName("LaserRed")[0];
     let agentRed: ƒ.Node = graph.getChildrenByName("AgentRed")[0];
 
-    transformLaser = laser.getComponent(ƒ.ComponentTransform).mtxLocal;
+    
     transformAgent = agentRed.getComponent(ƒ.ComponentTransform).mtxLocal;
-
-    transformLaser.translation = transformAgent.translation;
+    transformLaser = laser.getComponent(ƒ.ComponentTransform).mtxLocal.translate(transformAgent.translation);
+    
 
 
   }
