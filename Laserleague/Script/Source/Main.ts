@@ -4,7 +4,8 @@ namespace Script {
 
   let viewport: ƒ.Viewport;
   document.addEventListener("interactiveViewportStarted", <EventListener>start);
-  let transform:ƒ.Matrix4x4;
+  let transformLaser:ƒ.Matrix4x4;
+  let transformAgent:ƒ.Matrix4x4;
   function start(_event: CustomEvent): void {
     viewport = _event.detail;
 
@@ -13,14 +14,28 @@ namespace Script {
   
     let graph: ƒ.Node = viewport.getBranch();
     let laser: ƒ.Node = graph.getChildrenByName("Lasers")[0].getChildrenByName("LaserRed")[0];
-    transform = laser.getComponent(ƒ.ComponentTransform).mtxLocal;
+    transformLaser = laser.getComponent(ƒ.ComponentTransform).mtxLocal;
 
   }
 
   function update(_event: Event): void {
     // ƒ.Physics.world.simulate();  // if physics is included and used
-    transform.rotateZ(5);
+    transformLaser.rotateZ(0.0002);
     viewport.draw();
     ƒ.AudioManager.default.update();
+  }
+  function placeLaserRed(): void{
+
+    let graph: ƒ.Node = viewport.getBranch();
+
+    let laser: ƒ.Node = graph.getChildrenByName("Lasers")[0].getChildrenByName("LaserRed")[0];
+    let agentRed: ƒ.Node = graph.getChildrenByName("AgentRed")[0];
+
+    transformLaser = laser.getComponent(ƒ.ComponentTransform).mtxLocal;
+    transformAgent = agentRed.getComponent(ƒ.ComponentTransform).mtxLocal;
+
+    transformLaser.translation = transformAgent.translation;
+
+
   }
 }
