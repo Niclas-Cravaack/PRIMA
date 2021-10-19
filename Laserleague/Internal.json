@@ -114,39 +114,8 @@
           "ƒ.Node": {
             "name": "Lasers",
             "components": {
-              "ComponentMesh": [
-                {
-                  "ƒ.ComponentMesh": {
-                    "idMesh": "MeshCube|2021-10-13T11:46:52.167Z|30840",
-                    "pivot": {
-                      "translation": "[0, 0, 0]",
-                      "rotation": "[0, 0, 0]",
-                      "scaling": "[1, 1, 1]"
-                    },
-                    "Component": {
-                      "active": false
-                    }
-                  }
-                }
-              ],
-              "ComponentMaterial": [
-                {
-                  "ƒ.ComponentMaterial": {
-                    "sortForAlpha": false,
-                    "clrPrimary": "[1, 1, 1, 1]",
-                    "clrSecondary": "[1, 1, 1, 1]",
-                    "pivot": {
-                      "translation": "[0, 0]",
-                      "rotation": 0,
-                      "scaling": "[1, 1]"
-                    },
-                    "Component": {
-                      "active": true
-                    },
-                    "idMaterial": "Material|2021-10-13T11:48:46.058Z|41475"
-                  }
-                }
-              ]
+              "ComponentMesh": [],
+              "ComponentMaterial": []
             },
             "children": [
               {
@@ -164,6 +133,24 @@
                           "Component": {
                             "active": true
                           }
+                        }
+                      }
+                    ],
+                    "ComponentMaterial": [
+                      {
+                        "ƒ.ComponentMaterial": {
+                          "sortForAlpha": false,
+                          "clrPrimary": "[1, 1, 1, 1]",
+                          "clrSecondary": "[1, 1, 1, 1]",
+                          "pivot": {
+                            "translation": "[0, 0]",
+                            "rotation": 0,
+                            "scaling": "[1, 1]"
+                          },
+                          "Component": {
+                            "active": true
+                          },
+                          "idMaterial": "Material|2021-10-13T11:48:46.058Z|41475"
                         }
                       }
                     ]
@@ -723,7 +710,7 @@
             "children": [
               {
                 "ƒ.Node": {
-                  "name": "Agent1",
+                  "name": "AgentRed",
                   "components": {
                     "ComponentMesh": [
                       {
@@ -764,7 +751,7 @@
               },
               {
                 "ƒ.Node": {
-                  "name": "Agent2",
+                  "name": "AgentBlue",
                   "components": {
                     "ComponentMesh": [
                       {
