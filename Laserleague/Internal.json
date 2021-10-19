@@ -56,6 +56,55 @@
       }
     }
   },
+  "MeshSphere|2021-10-13T13:05:31.122Z|97978": {
+    "ƒ.MeshSphere": {
+      "idResource": "MeshSphere|2021-10-13T13:05:31.122Z|97978",
+      "name": "LaserOrigin",
+      "type": "MeshSphere",
+      "sectors": 8,
+      "stacks": 8
+    }
+  },
+  "MeshCube|2021-10-13T13:07:01.041Z|98830": {
+    "ƒ.MeshCube": {
+      "idResource": "MeshCube|2021-10-13T13:07:01.041Z|98830",
+      "name": "LaserArms",
+      "type": "MeshCube"
+    }
+  },
+  "Material|2021-10-13T12:45:13.239Z|14735": {
+    "ƒ.Material": {
+      "name": "Blue",
+      "idResource": "Material|2021-10-13T12:45:13.239Z|14735",
+      "shader": "ShaderUniColor",
+      "coat": {
+        "ƒ.CoatColored": {
+          "color": "[0.00392156862745098, 0.0196078431372549, 0.9764705882352941, 1]"
+        }
+      }
+    }
+  },
+  "Material|2021-10-13T13:27:21.240Z|15773": {
+    "ƒ.Material": {
+      "name": "White",
+      "idResource": "Material|2021-10-13T13:27:21.240Z|15773",
+      "shader": "ShaderUniColor",
+      "coat": {
+        "ƒ.CoatColored": {
+          "color": "[1, 1, 1, 1]"
+        }
+      }
+    }
+  },
+  "MeshSphere|2021-10-13T12:41:11.666Z|90351": {
+    "ƒ.MeshSphere": {
+      "idResource": "MeshSphere|2021-10-13T12:41:11.666Z|90351",
+      "name": "AgentSphere",
+      "type": "MeshSphere",
+      "sectors": 8,
+      "stacks": 8
+    }
+  },
   "Graph|2021-10-13T11:44:32.619Z|71129": {
     "ƒ.Graph": {
       "name": "Root",
@@ -102,38 +151,19 @@
             "children": [
               {
                 "ƒ.Node": {
-                  "name": "LaserRedOrigin",
+                  "name": "LaserRed",
                   "components": {
-                    "ComponentMesh": [
+                    "ComponentTransform": [
                       {
-                        "ƒ.ComponentMesh": {
-                          "idMesh": "MeshSphere|2021-10-13T13:05:31.122Z|97978",
-                          "pivot": {
-                            "translation": "[0, 0, 0.05000000074505806]",
+                        "ƒ.ComponentTransform": {
+                          "local": {
+                            "translation": "[0, 0, 0]",
                             "rotation": "[0, 0, 0]",
-                            "scaling": "[0.05000000074505806, 0.05000000074505806, 0.05000000074505806]"
+                            "scaling": "[1, 1, 1]"
                           },
                           "Component": {
                             "active": true
                           }
-                        }
-                      }
-                    ],
-                    "ComponentMaterial": [
-                      {
-                        "ƒ.ComponentMaterial": {
-                          "sortForAlpha": false,
-                          "clrPrimary": "[1, 1, 1, 1]",
-                          "clrSecondary": "[1, 1, 1, 1]",
-                          "pivot": {
-                            "translation": "[0, 0]",
-                            "rotation": 0,
-                            "scaling": "[1, 1]"
-                          },
-                          "Component": {
-                            "active": true
-                          },
-                          "idMaterial": "Material|2021-10-13T11:48:46.058Z|41475"
                         }
                       }
                     ]
@@ -141,16 +171,16 @@
                   "children": [
                     {
                       "ƒ.Node": {
-                        "name": "LaserRedArm1",
+                        "name": "LaserRedOrigin",
                         "components": {
                           "ComponentMesh": [
                             {
                               "ƒ.ComponentMesh": {
-                                "idMesh": "MeshCube|2021-10-13T13:07:01.041Z|98830",
+                                "idMesh": "MeshSphere|2021-10-13T13:05:31.122Z|97978",
                                 "pivot": {
-                                  "translation": "[0, 0.10000000894069672, 0.05000000074505806]",
+                                  "translation": "[0, 0, 0.05000000074505806]",
                                   "rotation": "[0, 0, 0]",
-                                  "scaling": "[0.02500000037252903, 0.20000000298023224, 0.02500000037252903]"
+                                  "scaling": "[0.05000000074505806, 0.05000000074505806, 0.05000000074505806]"
                                 },
                                 "Component": {
                                   "active": true
@@ -177,130 +207,131 @@
                             }
                           ]
                         },
-                        "children": []
-                      }
-                    },
-                    {
-                      "ƒ.Node": {
-                        "name": "LaserRedArm2",
-                        "components": {
-                          "ComponentMesh": [
-                            {
-                              "ƒ.ComponentMesh": {
-                                "idMesh": "MeshCube|2021-10-13T13:07:01.041Z|98830",
-                                "pivot": {
-                                  "translation": "[0.10000000149011612, 0, 0.05000000074505806]",
-                                  "rotation": "[0, 0, 0]",
-                                  "scaling": "[0.20000000298023224, 0.02500000037252903, 0.02500000223517418]"
-                                },
-                                "Component": {
-                                  "active": true
-                                }
-                              }
+                        "children": [
+                          {
+                            "ƒ.Node": {
+                              "name": "LaserRedArm1",
+                              "components": {
+                                "ComponentMesh": [
+                                  {
+                                    "ƒ.ComponentMesh": {
+                                      "idMesh": "MeshCube|2021-10-13T13:07:01.041Z|98830",
+                                      "pivot": {
+                                        "translation": "[0, 0.10000000894069672, 0.05000000074505806]",
+                                        "rotation": "[0, 0, 0]",
+                                        "scaling": "[0.02500000037252903, 0.20000000298023224, 0.02500000037252903]"
+                                      },
+                                      "Component": {
+                                        "active": true
+                                      }
+                                    }
+                                  }
+                                ],
+                                "ComponentMaterial": [
+                                  {
+                                    "ƒ.ComponentMaterial": {
+                                      "sortForAlpha": false,
+                                      "clrPrimary": "[1, 1, 1, 1]",
+                                      "clrSecondary": "[1, 1, 1, 1]",
+                                      "pivot": {
+                                        "translation": "[0, 0]",
+                                        "rotation": 0,
+                                        "scaling": "[1, 1]"
+                                      },
+                                      "Component": {
+                                        "active": true
+                                      },
+                                      "idMaterial": "Material|2021-10-13T11:48:46.058Z|41475"
+                                    }
+                                  }
+                                ]
+                              },
+                              "children": []
                             }
-                          ],
-                          "ComponentMaterial": [
-                            {
-                              "ƒ.ComponentMaterial": {
-                                "sortForAlpha": false,
-                                "clrPrimary": "[1, 1, 1, 1]",
-                                "clrSecondary": "[1, 1, 1, 1]",
-                                "pivot": {
-                                  "translation": "[0, 0]",
-                                  "rotation": 0,
-                                  "scaling": "[1, 1]"
-                                },
-                                "Component": {
-                                  "active": true
-                                },
-                                "idMaterial": "Material|2021-10-13T11:48:46.058Z|41475"
-                              }
+                          },
+                          {
+                            "ƒ.Node": {
+                              "name": "LaserRedArm2",
+                              "components": {
+                                "ComponentMesh": [
+                                  {
+                                    "ƒ.ComponentMesh": {
+                                      "idMesh": "MeshCube|2021-10-13T13:07:01.041Z|98830",
+                                      "pivot": {
+                                        "translation": "[0.07999999821186066, -0.07999999821186066, 0.05000000074505806]",
+                                        "rotation": "[0, 0, 130]",
+                                        "scaling": "[0.20000000298023224, 0.02500000037252903, 0.02500000223517418]"
+                                      },
+                                      "Component": {
+                                        "active": true
+                                      }
+                                    }
+                                  }
+                                ],
+                                "ComponentMaterial": [
+                                  {
+                                    "ƒ.ComponentMaterial": {
+                                      "sortForAlpha": false,
+                                      "clrPrimary": "[1, 1, 1, 1]",
+                                      "clrSecondary": "[1, 1, 1, 1]",
+                                      "pivot": {
+                                        "translation": "[0, 0]",
+                                        "rotation": 0,
+                                        "scaling": "[1, 1]"
+                                      },
+                                      "Component": {
+                                        "active": true
+                                      },
+                                      "idMaterial": "Material|2021-10-13T11:48:46.058Z|41475"
+                                    }
+                                  }
+                                ]
+                              },
+                              "children": []
                             }
-                          ]
-                        },
-                        "children": []
-                      }
-                    },
-                    {
-                      "ƒ.Node": {
-                        "name": "LaserRedArm3",
-                        "components": {
-                          "ComponentMesh": [
-                            {
-                              "ƒ.ComponentMesh": {
-                                "idMesh": "MeshCube|2021-10-13T13:07:01.041Z|98830",
-                                "pivot": {
-                                  "translation": "[-0.10000000149011612, 0, 0.05000000074505806]",
-                                  "rotation": "[0, 0, 0]",
-                                  "scaling": "[0.20000000298023224, 0.02500000037252903, 0.02500000037252903]"
-                                },
-                                "Component": {
-                                  "active": true
-                                }
-                              }
+                          },
+                          {
+                            "ƒ.Node": {
+                              "name": "LaserRedArm3",
+                              "components": {
+                                "ComponentMesh": [
+                                  {
+                                    "ƒ.ComponentMesh": {
+                                      "idMesh": "MeshCube|2021-10-13T13:07:01.041Z|98830",
+                                      "pivot": {
+                                        "translation": "[-0.08000000566244125, -0.08000001311302185, 0.05000000074505806]",
+                                        "rotation": "[0, 0, -130]",
+                                        "scaling": "[0.20000000298023224, 0.02500000037252903, 0.02500000037252903]"
+                                      },
+                                      "Component": {
+                                        "active": true
+                                      }
+                                    }
+                                  }
+                                ],
+                                "ComponentMaterial": [
+                                  {
+                                    "ƒ.ComponentMaterial": {
+                                      "sortForAlpha": false,
+                                      "clrPrimary": "[1, 1, 1, 1]",
+                                      "clrSecondary": "[1, 1, 1, 1]",
+                                      "pivot": {
+                                        "translation": "[0, 0]",
+                                        "rotation": 0,
+                                        "scaling": "[1, 1]"
+                                      },
+                                      "Component": {
+                                        "active": true
+                                      },
+                                      "idMaterial": "Material|2021-10-13T11:48:46.058Z|41475"
+                                    }
+                                  }
+                                ]
+                              },
+                              "children": []
                             }
-                          ],
-                          "ComponentMaterial": [
-                            {
-                              "ƒ.ComponentMaterial": {
-                                "sortForAlpha": false,
-                                "clrPrimary": "[1, 1, 1, 1]",
-                                "clrSecondary": "[1, 1, 1, 1]",
-                                "pivot": {
-                                  "translation": "[0, 0]",
-                                  "rotation": 0,
-                                  "scaling": "[1, 1]"
-                                },
-                                "Component": {
-                                  "active": true
-                                },
-                                "idMaterial": "Material|2021-10-13T11:48:46.058Z|41475"
-                              }
-                            }
-                          ]
-                        },
-                        "children": []
-                      }
-                    },
-                    {
-                      "ƒ.Node": {
-                        "name": "LaserRedArm4",
-                        "components": {
-                          "ComponentMesh": [
-                            {
-                              "ƒ.ComponentMesh": {
-                                "idMesh": "MeshCube|2021-10-13T13:07:01.041Z|98830",
-                                "pivot": {
-                                  "translation": "[0, -0.10000000149011612, 0.05000000074505806]",
-                                  "rotation": "[0, 0, 0]",
-                                  "scaling": "[0.02500000037252903, 0.20000000298023224, 0.02500000037252903]"
-                                },
-                                "Component": {
-                                  "active": true
-                                }
-                              }
-                            }
-                          ],
-                          "ComponentMaterial": [
-                            {
-                              "ƒ.ComponentMaterial": {
-                                "sortForAlpha": false,
-                                "clrPrimary": "[1, 1, 1, 1]",
-                                "clrSecondary": "[1, 1, 1, 1]",
-                                "pivot": {
-                                  "translation": "[0, 0]",
-                                  "rotation": 0,
-                                  "scaling": "[1, 1]"
-                                },
-                                "Component": {
-                                  "active": true
-                                },
-                                "idMaterial": "Material|2021-10-13T11:48:46.058Z|41475"
-                              }
-                            }
-                          ]
-                        },
-                        "children": []
+                          }
+                        ]
                       }
                     }
                   ]
@@ -308,34 +339,15 @@
               },
               {
                 "ƒ.Node": {
-                  "name": "LaserBlueOrigin",
+                  "name": "LaserBlue",
                   "components": {
-                    "ComponentMaterial": [
+                    "ComponentTransform": [
                       {
-                        "ƒ.ComponentMaterial": {
-                          "sortForAlpha": false,
-                          "clrPrimary": "[1, 1, 1, 1]",
-                          "clrSecondary": "[1, 1, 1, 1]",
-                          "pivot": {
-                            "translation": "[0, 0]",
-                            "rotation": 0,
-                            "scaling": "[1, 1]"
-                          },
-                          "Component": {
-                            "active": true
-                          },
-                          "idMaterial": "Material|2021-10-13T12:45:13.239Z|14735"
-                        }
-                      }
-                    ],
-                    "ComponentMesh": [
-                      {
-                        "ƒ.ComponentMesh": {
-                          "idMesh": "MeshSphere|2021-10-13T13:05:31.122Z|97978",
-                          "pivot": {
-                            "translation": "[-0.5, 0.5, 0.05000000074505806]",
+                        "ƒ.ComponentTransform": {
+                          "local": {
+                            "translation": "[0, 0, 0]",
                             "rotation": "[0, 0, 0]",
-                            "scaling": "[0.05000000074505806, 0.05000000074505806, 0.05000000074505806]"
+                            "scaling": "[1, 1, 1]"
                           },
                           "Component": {
                             "active": true
@@ -347,23 +359,8 @@
                   "children": [
                     {
                       "ƒ.Node": {
-                        "name": "LaserBlueArm1",
+                        "name": "LaserBlueOrigin",
                         "components": {
-                          "ComponentMesh": [
-                            {
-                              "ƒ.ComponentMesh": {
-                                "idMesh": "MeshCube|2021-10-13T13:07:01.041Z|98830",
-                                "pivot": {
-                                  "translation": "[-0.6000000238418579, 0.5, 0.05000000074505806]",
-                                  "rotation": "[0, 0, 0]",
-                                  "scaling": "[0.20000000298023224, 0.02500000223517418, 0.02500000037252903]"
-                                },
-                                "Component": {
-                                  "active": true
-                                }
-                              }
-                            }
-                          ],
                           "ComponentMaterial": [
                             {
                               "ƒ.ComponentMaterial": {
@@ -381,132 +378,148 @@
                                 "idMaterial": "Material|2021-10-13T12:45:13.239Z|14735"
                               }
                             }
-                          ]
-                        },
-                        "children": []
-                      }
-                    },
-                    {
-                      "ƒ.Node": {
-                        "name": "LaserBlueArm2",
-                        "components": {
+                          ],
                           "ComponentMesh": [
                             {
                               "ƒ.ComponentMesh": {
-                                "idMesh": "MeshCube|2021-10-13T13:07:01.041Z|98830",
+                                "idMesh": "MeshSphere|2021-10-13T13:05:31.122Z|97978",
                                 "pivot": {
-                                  "translation": "[-0.4000000059604645, 0.5, 0.05000000074505806]",
+                                  "translation": "[-0.5, 0.5, 0.05000000074505806]",
                                   "rotation": "[0, 0, 0]",
-                                  "scaling": "[0.20000000298023224, 0.02500000037252903, 0.02500000037252903]"
+                                  "scaling": "[0.05000000074505806, 0.05000000074505806, 0.05000000074505806]"
                                 },
                                 "Component": {
                                   "active": true
                                 }
                               }
                             }
-                          ],
-                          "ComponentMaterial": [
-                            {
-                              "ƒ.ComponentMaterial": {
-                                "sortForAlpha": false,
-                                "clrPrimary": "[1, 1, 1, 1]",
-                                "clrSecondary": "[1, 1, 1, 1]",
-                                "pivot": {
-                                  "translation": "[0, 0]",
-                                  "rotation": 0,
-                                  "scaling": "[1, 1]"
-                                },
-                                "Component": {
-                                  "active": true
-                                },
-                                "idMaterial": "Material|2021-10-13T12:45:13.239Z|14735"
-                              }
-                            }
                           ]
                         },
-                        "children": []
-                      }
-                    },
-                    {
-                      "ƒ.Node": {
-                        "name": "LaserBlueArm3",
-                        "components": {
-                          "ComponentMesh": [
-                            {
-                              "ƒ.ComponentMesh": {
-                                "idMesh": "MeshCube|2021-10-13T13:07:01.041Z|98830",
-                                "pivot": {
-                                  "translation": "[-0.5, 0.6000000238418579, 0.05000000074505806]",
-                                  "rotation": "[0, 0, 0]",
-                                  "scaling": "[0.02500000037252903, 0.20000000298023224, 0.02500000037252903]"
-                                },
-                                "Component": {
-                                  "active": true
-                                }
-                              }
+                        "children": [
+                          {
+                            "ƒ.Node": {
+                              "name": "LaserBlueArm1",
+                              "components": {
+                                "ComponentMesh": [
+                                  {
+                                    "ƒ.ComponentMesh": {
+                                      "idMesh": "MeshCube|2021-10-13T13:07:01.041Z|98830",
+                                      "pivot": {
+                                        "translation": "[-0.5699999928474426, 0.429999977350235, 0.05000000074505806]",
+                                        "rotation": "[0, 0, -130]",
+                                        "scaling": "[0.20000000298023224, 0.02500000223517418, 0.02500000037252903]"
+                                      },
+                                      "Component": {
+                                        "active": true
+                                      }
+                                    }
+                                  }
+                                ],
+                                "ComponentMaterial": [
+                                  {
+                                    "ƒ.ComponentMaterial": {
+                                      "sortForAlpha": false,
+                                      "clrPrimary": "[1, 1, 1, 1]",
+                                      "clrSecondary": "[1, 1, 1, 1]",
+                                      "pivot": {
+                                        "translation": "[0, 0]",
+                                        "rotation": 0,
+                                        "scaling": "[1, 1]"
+                                      },
+                                      "Component": {
+                                        "active": true
+                                      },
+                                      "idMaterial": "Material|2021-10-13T12:45:13.239Z|14735"
+                                    }
+                                  }
+                                ]
+                              },
+                              "children": []
                             }
-                          ],
-                          "ComponentMaterial": [
-                            {
-                              "ƒ.ComponentMaterial": {
-                                "sortForAlpha": false,
-                                "clrPrimary": "[1, 1, 1, 1]",
-                                "clrSecondary": "[1, 1, 1, 1]",
-                                "pivot": {
-                                  "translation": "[0, 0]",
-                                  "rotation": 0,
-                                  "scaling": "[1, 1]"
-                                },
-                                "Component": {
-                                  "active": true
-                                },
-                                "idMaterial": "Material|2021-10-13T12:45:13.239Z|14735"
-                              }
+                          },
+                          {
+                            "ƒ.Node": {
+                              "name": "LaserBlueArm2",
+                              "components": {
+                                "ComponentMesh": [
+                                  {
+                                    "ƒ.ComponentMesh": {
+                                      "idMesh": "MeshCube|2021-10-13T13:07:01.041Z|98830",
+                                      "pivot": {
+                                        "translation": "[-0.42000001668930054, 0.42000001668930054, 0.05000000074505806]",
+                                        "rotation": "[0, 0, 130]",
+                                        "scaling": "[0.20000000298023224, 0.02500000037252903, 0.02500000037252903]"
+                                      },
+                                      "Component": {
+                                        "active": true
+                                      }
+                                    }
+                                  }
+                                ],
+                                "ComponentMaterial": [
+                                  {
+                                    "ƒ.ComponentMaterial": {
+                                      "sortForAlpha": false,
+                                      "clrPrimary": "[1, 1, 1, 1]",
+                                      "clrSecondary": "[1, 1, 1, 1]",
+                                      "pivot": {
+                                        "translation": "[0, 0]",
+                                        "rotation": 0,
+                                        "scaling": "[1, 1]"
+                                      },
+                                      "Component": {
+                                        "active": true
+                                      },
+                                      "idMaterial": "Material|2021-10-13T12:45:13.239Z|14735"
+                                    }
+                                  }
+                                ]
+                              },
+                              "children": []
                             }
-                          ]
-                        },
-                        "children": []
-                      }
-                    },
-                    {
-                      "ƒ.Node": {
-                        "name": "LaserBlueArm4",
-                        "components": {
-                          "ComponentMesh": [
-                            {
-                              "ƒ.ComponentMesh": {
-                                "idMesh": "MeshCube|2021-10-13T13:07:01.041Z|98830",
-                                "pivot": {
-                                  "translation": "[-0.5, 0.4000000059604645, 0.05000000074505806]",
-                                  "rotation": "[0, 0, 0]",
-                                  "scaling": "[0.02500000037252903, 0.20000000298023224, 0.02500000037252903]"
-                                },
-                                "Component": {
-                                  "active": true
-                                }
-                              }
+                          },
+                          {
+                            "ƒ.Node": {
+                              "name": "LaserBlueArm3",
+                              "components": {
+                                "ComponentMesh": [
+                                  {
+                                    "ƒ.ComponentMesh": {
+                                      "idMesh": "MeshCube|2021-10-13T13:07:01.041Z|98830",
+                                      "pivot": {
+                                        "translation": "[-0.5, 0.6000000238418579, 0.05000000074505806]",
+                                        "rotation": "[0, 0, 0]",
+                                        "scaling": "[0.02500000037252903, 0.20000000298023224, 0.02500000037252903]"
+                                      },
+                                      "Component": {
+                                        "active": true
+                                      }
+                                    }
+                                  }
+                                ],
+                                "ComponentMaterial": [
+                                  {
+                                    "ƒ.ComponentMaterial": {
+                                      "sortForAlpha": false,
+                                      "clrPrimary": "[1, 1, 1, 1]",
+                                      "clrSecondary": "[1, 1, 1, 1]",
+                                      "pivot": {
+                                        "translation": "[0, 0]",
+                                        "rotation": 0,
+                                        "scaling": "[1, 1]"
+                                      },
+                                      "Component": {
+                                        "active": true
+                                      },
+                                      "idMaterial": "Material|2021-10-13T12:45:13.239Z|14735"
+                                    }
+                                  }
+                                ]
+                              },
+                              "children": []
                             }
-                          ],
-                          "ComponentMaterial": [
-                            {
-                              "ƒ.ComponentMaterial": {
-                                "sortForAlpha": false,
-                                "clrPrimary": "[1, 1, 1, 1]",
-                                "clrSecondary": "[1, 1, 1, 1]",
-                                "pivot": {
-                                  "translation": "[0, 0]",
-                                  "rotation": 0,
-                                  "scaling": "[1, 1]"
-                                },
-                                "Component": {
-                                  "active": true
-                                },
-                                "idMaterial": "Material|2021-10-13T12:45:13.239Z|14735"
-                              }
-                            }
-                          ]
-                        },
-                        "children": []
+                          }
+                        ]
                       }
                     }
                   ]
@@ -514,38 +527,19 @@
               },
               {
                 "ƒ.Node": {
-                  "name": "LaserNeutralOrigin",
+                  "name": "LaserNeutral",
                   "components": {
-                    "ComponentMesh": [
+                    "ComponentTransform": [
                       {
-                        "ƒ.ComponentMesh": {
-                          "idMesh": "MeshSphere|2021-10-13T13:05:31.122Z|97978",
-                          "pivot": {
-                            "translation": "[0.5, -0.5, 0.05000000074505806]",
+                        "ƒ.ComponentTransform": {
+                          "local": {
+                            "translation": "[0, 0, 0]",
                             "rotation": "[0, 0, 0]",
-                            "scaling": "[0.05000000074505806, 0.05000000074505806, 0.05000000074505806]"
+                            "scaling": "[1, 1, 1]"
                           },
                           "Component": {
                             "active": true
                           }
-                        }
-                      }
-                    ],
-                    "ComponentMaterial": [
-                      {
-                        "ƒ.ComponentMaterial": {
-                          "sortForAlpha": false,
-                          "clrPrimary": "[1, 1, 1, 1]",
-                          "clrSecondary": "[1, 1, 1, 1]",
-                          "pivot": {
-                            "translation": "[0, 0]",
-                            "rotation": 0,
-                            "scaling": "[1, 1]"
-                          },
-                          "Component": {
-                            "active": true
-                          },
-                          "idMaterial": "Material|2021-10-13T13:27:21.240Z|15773"
                         }
                       }
                     ]
@@ -553,16 +547,16 @@
                   "children": [
                     {
                       "ƒ.Node": {
-                        "name": "LaserNeutralArm1",
+                        "name": "LaserNeutralOrigin",
                         "components": {
                           "ComponentMesh": [
                             {
                               "ƒ.ComponentMesh": {
-                                "idMesh": "MeshCube|2021-10-13T13:07:01.041Z|98830",
+                                "idMesh": "MeshSphere|2021-10-13T13:05:31.122Z|97978",
                                 "pivot": {
-                                  "translation": "[0.40000003576278687, -0.5, 0.05000000074505806]",
+                                  "translation": "[0.5, -0.5, 0.05000000074505806]",
                                   "rotation": "[0, 0, 0]",
-                                  "scaling": "[0.20000000298023224, 0.02500000037252903, 0.02500000037252903]"
+                                  "scaling": "[0.05000000074505806, 0.05000000074505806, 0.05000000074505806]"
                                 },
                                 "Component": {
                                   "active": true
@@ -589,130 +583,131 @@
                             }
                           ]
                         },
-                        "children": []
-                      }
-                    },
-                    {
-                      "ƒ.Node": {
-                        "name": "LaserNeutralArm2",
-                        "components": {
-                          "ComponentMesh": [
-                            {
-                              "ƒ.ComponentMesh": {
-                                "idMesh": "MeshCube|2021-10-13T13:07:01.041Z|98830",
-                                "pivot": {
-                                  "translation": "[0.6000000238418579, -0.5, 0.05000000074505806]",
-                                  "rotation": "[0, 0, 0]",
-                                  "scaling": "[0.20000000298023224, 0.02500000037252903, 0.02500000037252903]"
-                                },
-                                "Component": {
-                                  "active": true
-                                }
-                              }
+                        "children": [
+                          {
+                            "ƒ.Node": {
+                              "name": "LaserNeutralArm1",
+                              "components": {
+                                "ComponentMesh": [
+                                  {
+                                    "ƒ.ComponentMesh": {
+                                      "idMesh": "MeshCube|2021-10-13T13:07:01.041Z|98830",
+                                      "pivot": {
+                                        "translation": "[0.42000001668930054, -0.5799999237060547, 0.05000000074505806]",
+                                        "rotation": "[0, 0, -130]",
+                                        "scaling": "[0.20000000298023224, 0.02500000037252903, 0.02500000037252903]"
+                                      },
+                                      "Component": {
+                                        "active": true
+                                      }
+                                    }
+                                  }
+                                ],
+                                "ComponentMaterial": [
+                                  {
+                                    "ƒ.ComponentMaterial": {
+                                      "sortForAlpha": false,
+                                      "clrPrimary": "[1, 1, 1, 1]",
+                                      "clrSecondary": "[1, 1, 1, 1]",
+                                      "pivot": {
+                                        "translation": "[0, 0]",
+                                        "rotation": 0,
+                                        "scaling": "[1, 1]"
+                                      },
+                                      "Component": {
+                                        "active": true
+                                      },
+                                      "idMaterial": "Material|2021-10-13T13:27:21.240Z|15773"
+                                    }
+                                  }
+                                ]
+                              },
+                              "children": []
                             }
-                          ],
-                          "ComponentMaterial": [
-                            {
-                              "ƒ.ComponentMaterial": {
-                                "sortForAlpha": false,
-                                "clrPrimary": "[1, 1, 1, 1]",
-                                "clrSecondary": "[1, 1, 1, 1]",
-                                "pivot": {
-                                  "translation": "[0, 0]",
-                                  "rotation": 0,
-                                  "scaling": "[1, 1]"
-                                },
-                                "Component": {
-                                  "active": true
-                                },
-                                "idMaterial": "Material|2021-10-13T13:27:21.240Z|15773"
-                              }
+                          },
+                          {
+                            "ƒ.Node": {
+                              "name": "LaserNeutralArm2",
+                              "components": {
+                                "ComponentMesh": [
+                                  {
+                                    "ƒ.ComponentMesh": {
+                                      "idMesh": "MeshCube|2021-10-13T13:07:01.041Z|98830",
+                                      "pivot": {
+                                        "translation": "[0.5800000429153442, -0.5799999237060547, 0.05000000074505806]",
+                                        "rotation": "[0, 0, 130]",
+                                        "scaling": "[0.20000000298023224, 0.02500000037252903, 0.02500000037252903]"
+                                      },
+                                      "Component": {
+                                        "active": true
+                                      }
+                                    }
+                                  }
+                                ],
+                                "ComponentMaterial": [
+                                  {
+                                    "ƒ.ComponentMaterial": {
+                                      "sortForAlpha": false,
+                                      "clrPrimary": "[1, 1, 1, 1]",
+                                      "clrSecondary": "[1, 1, 1, 1]",
+                                      "pivot": {
+                                        "translation": "[0, 0]",
+                                        "rotation": 0,
+                                        "scaling": "[1, 1]"
+                                      },
+                                      "Component": {
+                                        "active": true
+                                      },
+                                      "idMaterial": "Material|2021-10-13T13:27:21.240Z|15773"
+                                    }
+                                  }
+                                ]
+                              },
+                              "children": []
                             }
-                          ]
-                        },
-                        "children": []
-                      }
-                    },
-                    {
-                      "ƒ.Node": {
-                        "name": "LaserNeutralArm3",
-                        "components": {
-                          "ComponentMesh": [
-                            {
-                              "ƒ.ComponentMesh": {
-                                "idMesh": "MeshCube|2021-10-13T13:07:01.041Z|98830",
-                                "pivot": {
-                                  "translation": "[0.5, -0.4000000059604645, 0.05000000074505806]",
-                                  "rotation": "[0, 0, 0]",
-                                  "scaling": "[0.02500000037252903, 0.20000000298023224, 0.02500000037252903]"
-                                },
-                                "Component": {
-                                  "active": true
-                                }
-                              }
+                          },
+                          {
+                            "ƒ.Node": {
+                              "name": "LaserNeutralArm3",
+                              "components": {
+                                "ComponentMesh": [
+                                  {
+                                    "ƒ.ComponentMesh": {
+                                      "idMesh": "MeshCube|2021-10-13T13:07:01.041Z|98830",
+                                      "pivot": {
+                                        "translation": "[0.5, -0.4000000059604645, 0.05000000074505806]",
+                                        "rotation": "[0, 0, 0]",
+                                        "scaling": "[0.02500000037252903, 0.20000000298023224, 0.02500000037252903]"
+                                      },
+                                      "Component": {
+                                        "active": true
+                                      }
+                                    }
+                                  }
+                                ],
+                                "ComponentMaterial": [
+                                  {
+                                    "ƒ.ComponentMaterial": {
+                                      "sortForAlpha": false,
+                                      "clrPrimary": "[1, 1, 1, 1]",
+                                      "clrSecondary": "[1, 1, 1, 1]",
+                                      "pivot": {
+                                        "translation": "[0, 0]",
+                                        "rotation": 0,
+                                        "scaling": "[1, 1]"
+                                      },
+                                      "Component": {
+                                        "active": true
+                                      },
+                                      "idMaterial": "Material|2021-10-13T13:27:21.240Z|15773"
+                                    }
+                                  }
+                                ]
+                              },
+                              "children": []
                             }
-                          ],
-                          "ComponentMaterial": [
-                            {
-                              "ƒ.ComponentMaterial": {
-                                "sortForAlpha": false,
-                                "clrPrimary": "[1, 1, 1, 1]",
-                                "clrSecondary": "[1, 1, 1, 1]",
-                                "pivot": {
-                                  "translation": "[0, 0]",
-                                  "rotation": 0,
-                                  "scaling": "[1, 1]"
-                                },
-                                "Component": {
-                                  "active": true
-                                },
-                                "idMaterial": "Material|2021-10-13T13:27:21.240Z|15773"
-                              }
-                            }
-                          ]
-                        },
-                        "children": []
-                      }
-                    },
-                    {
-                      "ƒ.Node": {
-                        "name": "LaserNeutralArm4",
-                        "components": {
-                          "ComponentMesh": [
-                            {
-                              "ƒ.ComponentMesh": {
-                                "idMesh": "MeshCube|2021-10-13T13:07:01.041Z|98830",
-                                "pivot": {
-                                  "translation": "[0.5, -0.6000000238418579, 0.05000000074505806]",
-                                  "rotation": "[0, 0, 0]",
-                                  "scaling": "[0.02500000037252903, 0.20000000298023224, 0.02500000037252903]"
-                                },
-                                "Component": {
-                                  "active": true
-                                }
-                              }
-                            }
-                          ],
-                          "ComponentMaterial": [
-                            {
-                              "ƒ.ComponentMaterial": {
-                                "sortForAlpha": false,
-                                "clrPrimary": "[1, 1, 1, 1]",
-                                "clrSecondary": "[1, 1, 1, 1]",
-                                "pivot": {
-                                  "translation": "[0, 0]",
-                                  "rotation": 0,
-                                  "scaling": "[1, 1]"
-                                },
-                                "Component": {
-                                  "active": true
-                                },
-                                "idMaterial": "Material|2021-10-13T13:27:21.240Z|15773"
-                              }
-                            }
-                          ]
-                        },
-                        "children": []
+                          }
+                        ]
                       }
                     }
                   ]
@@ -911,55 +906,6 @@
       ],
       "idResource": "Graph|2021-10-13T11:44:32.619Z|71129",
       "type": "Graph"
-    }
-  },
-  "MeshSphere|2021-10-13T12:41:11.666Z|90351": {
-    "ƒ.MeshSphere": {
-      "idResource": "MeshSphere|2021-10-13T12:41:11.666Z|90351",
-      "name": "AgentSphere",
-      "type": "MeshSphere",
-      "sectors": 8,
-      "stacks": 8
-    }
-  },
-  "Material|2021-10-13T12:45:13.239Z|14735": {
-    "ƒ.Material": {
-      "name": "Blue",
-      "idResource": "Material|2021-10-13T12:45:13.239Z|14735",
-      "shader": "ShaderUniColor",
-      "coat": {
-        "ƒ.CoatColored": {
-          "color": "[0.00392156862745098, 0.0196078431372549, 0.9764705882352941, 1]"
-        }
-      }
-    }
-  },
-  "MeshSphere|2021-10-13T13:05:31.122Z|97978": {
-    "ƒ.MeshSphere": {
-      "idResource": "MeshSphere|2021-10-13T13:05:31.122Z|97978",
-      "name": "LaserOrigin",
-      "type": "MeshSphere",
-      "sectors": 8,
-      "stacks": 8
-    }
-  },
-  "MeshCube|2021-10-13T13:07:01.041Z|98830": {
-    "ƒ.MeshCube": {
-      "idResource": "MeshCube|2021-10-13T13:07:01.041Z|98830",
-      "name": "LaserArms",
-      "type": "MeshCube"
-    }
-  },
-  "Material|2021-10-13T13:27:21.240Z|15773": {
-    "ƒ.Material": {
-      "name": "White",
-      "idResource": "Material|2021-10-13T13:27:21.240Z|15773",
-      "shader": "ShaderUniColor",
-      "coat": {
-        "ƒ.CoatColored": {
-          "color": "[1, 1, 1, 1]"
-        }
-      }
     }
   }
 }
