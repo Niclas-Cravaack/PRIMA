@@ -105,6 +105,13 @@
       "stacks": 8
     }
   },
+  "MeshPyramid|2021-10-21T11:18:13.454Z|79579": {
+    "ƒ.MeshPyramid": {
+      "idResource": "MeshPyramid|2021-10-21T11:18:13.454Z|79579",
+      "name": "MeshPyramid",
+      "type": "MeshPyramid"
+    }
+  },
   "Graph|2021-10-13T11:44:32.619Z|71129": {
     "ƒ.Graph": {
       "name": "Root",
@@ -133,24 +140,7 @@
                         }
                       }
                     ],
-                    "ComponentMaterial": [
-                      {
-                        "ƒ.ComponentMaterial": {
-                          "sortForAlpha": false,
-                          "clrPrimary": "[1, 1, 1, 1]",
-                          "clrSecondary": "[1, 1, 1, 1]",
-                          "pivot": {
-                            "translation": "[0, 0]",
-                            "rotation": 0,
-                            "scaling": "[1, 1]"
-                          },
-                          "Component": {
-                            "active": true
-                          },
-                          "idMaterial": "Material|2021-10-13T11:48:46.058Z|41475"
-                        }
-                      }
-                    ]
+                    "ComponentMaterial": []
                   },
                   "children": [
                     {
@@ -714,7 +704,7 @@
                         "ƒ.ComponentMesh": {
                           "idMesh": "MeshPyramid|2021-10-21T11:18:13.454Z|79579",
                           "pivot": {
-                            "translation": "[9, -7, 0]",
+                            "translation": "[0, 0, 0]",
                             "rotation": "[0, 0, 0]",
                             "scaling": "[1, 1, 1]"
                           },
@@ -741,6 +731,20 @@
                           "idMaterial": "Material|2021-10-13T11:48:46.058Z|41475"
                         }
                       }
+                    ],
+                    "ComponentTransform": [
+                      {
+                        "ƒ.ComponentTransform": {
+                          "local": {
+                            "translation": "[9, -7, 0]",
+                            "rotation": "[0, 0, 0]",
+                            "scaling": "[1, 1, 1]"
+                          },
+                          "Component": {
+                            "active": true
+                          }
+                        }
+                      }
                     ]
                   },
                   "children": []
@@ -755,7 +759,7 @@
                         "ƒ.ComponentMesh": {
                           "idMesh": "MeshPyramid|2021-10-21T11:18:13.454Z|79579",
                           "pivot": {
-                            "translation": "[-9, 6.999999046325684, 0]",
+                            "translation": "[0, 0, 0]",
                             "rotation": "[0, 0, 180]",
                             "scaling": "[1, 1, 1]"
                           },
@@ -780,6 +784,20 @@
                             "active": true
                           },
                           "idMaterial": "Material|2021-10-13T12:45:13.239Z|14735"
+                        }
+                      }
+                    ],
+                    "ComponentTransform": [
+                      {
+                        "ƒ.ComponentTransform": {
+                          "local": {
+                            "translation": "[-9, 7, 0]",
+                            "rotation": "[0, 0, 0]",
+                            "scaling": "[1, 1, 1]"
+                          },
+                          "Component": {
+                            "active": true
+                          }
                         }
                       }
                     ]
@@ -890,13 +908,6 @@
       ],
       "idResource": "Graph|2021-10-13T11:44:32.619Z|71129",
       "type": "Graph"
-    }
-  },
-  "MeshPyramid|2021-10-21T11:18:13.454Z|79579": {
-    "ƒ.MeshPyramid": {
-      "idResource": "MeshPyramid|2021-10-21T11:18:13.454Z|79579",
-      "name": "MeshPyramid",
-      "type": "MeshPyramid"
     }
   }
 }

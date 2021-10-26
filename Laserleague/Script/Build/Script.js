@@ -39,17 +39,44 @@ var Script;
     let viewport;
     document.addEventListener("interactiveViewportStarted", start);
     let transform;
+    let agentRed;
+    let agentBlue;
     function start(_event) {
         viewport = _event.detail;
         ƒ.Loop.addEventListener("loopFrame" /* LOOP_FRAME */, update);
         ƒ.Loop.start(); // start the game loop to continously draw the viewport, update the audiosystem and drive the physics i/a
         let graph = viewport.getBranch();
         let laser = graph.getChildrenByName("Lasers")[0].getChildrenByName("LaserRed")[0];
+        agentRed = graph.getChildrenByName("Agents")[0].getChildrenByName("AgentRed")[0];
+        agentBlue = graph.getChildrenByName("Agents")[0].getChildrenByName("AgentBlue")[0];
+        viewport.camera.mtxPivot.translateZ(-16);
         transform = laser.getComponent(ƒ.ComponentTransform).mtxLocal;
     }
     function update(_event) {
         // ƒ.Physics.world.simulate();  // if physics is included and used
-        transform.rotateZ(5);
+        let deltaTime = ƒ.Loop.timeFrameReal / 1000;
+        let speedLaserRotate = 360; // degres per second
+        let speedAgentTranslation = 10; // meters per second
+        let speedAgentRotation = 360; // meters per second
+        //AgentRed controlls
+        if (ƒ.Keyboard.isPressedOne([ƒ.KEYBOARD_CODE.W]))
+            agentRed.mtxLocal.translateY(speedAgentTranslation * deltaTime);
+        if (ƒ.Keyboard.isPressedOne([ƒ.KEYBOARD_CODE.S]))
+            agentRed.mtxLocal.translateY(-speedAgentTranslation * deltaTime);
+        if (ƒ.Keyboard.isPressedOne([ƒ.KEYBOARD_CODE.A]))
+            agentRed.mtxLocal.rotateZ(speedAgentRotation * deltaTime);
+        if (ƒ.Keyboard.isPressedOne([ƒ.KEYBOARD_CODE.D]))
+            agentRed.mtxLocal.rotateZ(-speedAgentRotation * deltaTime);
+        //AgentBlue controlls
+        if (ƒ.Keyboard.isPressedOne([ƒ.KEYBOARD_CODE.ARROW_DOWN]))
+            agentBlue.mtxLocal.translateY(speedAgentTranslation * deltaTime);
+        if (ƒ.Keyboard.isPressedOne([ƒ.KEYBOARD_CODE.ARROW_UP]))
+            agentBlue.mtxLocal.translateY(-speedAgentTranslation * deltaTime);
+        if (ƒ.Keyboard.isPressedOne([ƒ.KEYBOARD_CODE.ARROW_LEFT]))
+            agentBlue.mtxLocal.rotateZ(speedAgentRotation * deltaTime);
+        if (ƒ.Keyboard.isPressedOne([ƒ.KEYBOARD_CODE.ARROW_RIGHT]))
+            agentBlue.mtxLocal.rotateZ(-speedAgentRotation * deltaTime);
+        transform.rotateZ(speedLaserRotate * deltaTime / 2);
         viewport.draw();
         ƒ.AudioManager.default.update();
     }
