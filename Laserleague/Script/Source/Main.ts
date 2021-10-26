@@ -7,6 +7,8 @@ namespace Script {
   let transform:ƒ.Matrix4x4;
   let agentRed: ƒ.Node;
   let agentBlue: ƒ.Node;
+  let ctrlForward: ƒ.Control = new  ƒ.Control("Forward", 10, ƒ.CONTROL_TYPE.PROPORTIONAL);
+  ctrlForward.setDelay(200);
   
   function start(_event: CustomEvent): void {
     viewport = _event.detail;
@@ -32,30 +34,40 @@ namespace Script {
     // ƒ.Physics.world.simulate();  // if physics is included and used
     let deltaTime: number = ƒ.Loop.timeFrameReal / 1000;
     let speedLaserRotate: number = 360; // degres per second
-    let speedAgentTranslation: number = 10; // meters per second
     let speedAgentRotation: number = 360; // meters per second
 
     //AgentRed controlls
-    if (ƒ.Keyboard.isPressedOne([ƒ.KEYBOARD_CODE.W]))
-      agentRed.mtxLocal.translateY(speedAgentTranslation * deltaTime);
-    if (ƒ.Keyboard.isPressedOne([ƒ.KEYBOARD_CODE.S]))
-      agentRed.mtxLocal.translateY(-speedAgentTranslation * deltaTime);
-    if (ƒ.Keyboard.isPressedOne([ƒ.KEYBOARD_CODE.A]))
+    let value1: number = (
+      ƒ.Keyboard.mapToValue(-1, 0, [ƒ.KEYBOARD_CODE.S, ƒ.KEYBOARD_CODE.ARROW_DOWN])
+      + ƒ.Keyboard.mapToValue(1, 0, [ƒ.KEYBOARD_CODE.W, ƒ.KEYBOARD_CODE.ARROW_UP])
+    );
+    ctrlForward.setInput(value1 * deltaTime);
+    agentRed.mtxLocal.translateY(ctrlForward.getOutput());
+    
+    if (ƒ.Keyboard.isPressedOne([ƒ.KEYBOARD_CODE.A, ƒ.KEYBOARD_CODE.ARROW_LEFT]))
       agentRed.mtxLocal.rotateZ(speedAgentRotation * deltaTime);
-    if (ƒ.Keyboard.isPressedOne([ƒ.KEYBOARD_CODE.D]))
+    if (ƒ.Keyboard.isPressedOne([ƒ.KEYBOARD_CODE.D, ƒ.KEYBOARD_CODE.ARROW_RIGHT]))
       agentRed.mtxLocal.rotateZ(-speedAgentRotation * deltaTime);
 
     //AgentBlue controlls
-    if (ƒ.Keyboard.isPressedOne([ ƒ.KEYBOARD_CODE.ARROW_DOWN]))
-      agentBlue.mtxLocal.translateY(speedAgentTranslation * deltaTime);
-    if (ƒ.Keyboard.isPressedOne([ ƒ.KEYBOARD_CODE.ARROW_UP]))
-      agentBlue.mtxLocal.translateY(-speedAgentTranslation * deltaTime);
-    if (ƒ.Keyboard.isPressedOne([ ƒ.KEYBOARD_CODE.ARROW_LEFT]))
-      agentBlue.mtxLocal.rotateZ(speedAgentRotation * deltaTime);
-    if (ƒ.Keyboard.isPressedOne([ ƒ.KEYBOARD_CODE.ARROW_RIGHT]))
-      agentBlue.mtxLocal.rotateZ(-speedAgentRotation * deltaTime);
+    let value2: number = (
+      ƒ.Keyboard.mapToValue(-1, 0, [ƒ.KEYBOARD_CODE.ARROW_DOWN])
+      + ƒ.Keyboard.mapToValue(1, 0, [ƒ.KEYBOARD_CODE.ARROW_UP])
+    );
+    ctrlForward.setInput(value2 * deltaTime);
+    agentBlue.mtxLocal.translateY(ctrlForward.getOutput());
 
-    transform.rotateZ(speedLaserRotate * deltaTime/2);
+    if (ƒ.Keyboard.isPressedOne([ƒ.KEYBOARD_CODE.ARROW_LEFT]))
+      agentBlue.mtxLocal.rotateZ(speedAgentRotation * deltaTime);
+    if (ƒ.Keyboard.isPressedOne([ƒ.KEYBOARD_CODE.ARROW_RIGHT]))
+      agentBlue.mtxLocal.rotateZ(-speedAgentRotation * deltaTime);
+   
+    
+    
+      //transform.rotateZ(speedLaserRotate * deltaTime/2);
+
+
+
     viewport.draw();
     ƒ.AudioManager.default.update();
   }
