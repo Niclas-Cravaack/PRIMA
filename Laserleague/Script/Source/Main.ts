@@ -82,11 +82,11 @@ namespace Script {
   }
 
   function checkCollisionRed() : void{
-    let beam1: ƒ.Node = laser.getChildrenByName("Arm")[0].getChildren()[0];
+    let beam1: ƒ.Node = laser.getChildrenByName("LaserRed")[0].getChildren()[0];
     let posLocal1: ƒ.Vector3 = ƒ.Vector3.TRANSFORMATION(agentRed.mtxWorld.translation, beam1.mtxWorldInverse, true);
-    let beam2: ƒ.Node = laser.getChildrenByName("Arm")[0].getChildren()[1];
+    let beam2: ƒ.Node = laser.getChildrenByName("LaserRed")[0].getChildren()[1];
     let posLocal2: ƒ.Vector3 = ƒ.Vector3.TRANSFORMATION(agentRed.mtxWorld.translation, beam2.mtxWorldInverse, true);
-    let beam3: ƒ.Node = laser.getChildrenByName("Arm")[0].getChildren()[2];
+    let beam3: ƒ.Node = laser.getChildrenByName("LaserRed")[0].getChildren()[2];
     let posLocal3: ƒ.Vector3 = ƒ.Vector3.TRANSFORMATION(agentRed.mtxWorld.translation, beam3.mtxWorldInverse, true);
 
     if(posLocal1.x <= 2.8 && posLocal1.x >= 0 && posLocal1.y <= 0.25 && posLocal1.y >= -0.25)
