@@ -9,3 +9,9 @@ declare namespace Script {
 }
 declare namespace Script {
 }
+declare namespace LaserLeague {
+    import ƒ = FudgeCore;
+    class Agent extends ƒ.Node {
+        constructor();
+    }
+}
