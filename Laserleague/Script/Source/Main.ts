@@ -1,101 +1,80 @@
 namespace Script {
   import ƒ = FudgeCore;
-  import Agent;
+  
   ƒ.Debug.info("Main Program Template running!")
 
   let viewport: ƒ.Viewport;
-  document.addEventListener("interactiveViewportStarted", <EventListener><any>start);
+  document.addEventListener("interactiveViewportStarted", <any>start);
 
-  let transform: ƒ.Matrix4x4;
-  let laser: ƒ.Node
-  let agentRed: ƒ.Node;
-  let agentBlue = new Agent;
+  let laserformation: ƒ.Node;
+  let agent: Agent;
 
-  let ctrlForward: ƒ.Control = new ƒ.Control("Forward", 10, ƒ.CONTROL_TYPE.PROPORTIONAL);
-  ctrlForward.setDelay(200);
+  let ctrForward: ƒ.Control = new ƒ.Control("Forward", 10, ƒ.CONTROL_TYPE.PROPORTIONAL);
+  ctrForward.setDelay(200);
+
+  let ctrRotate: ƒ.Control = new ƒ.Control("Rotate", 90, ƒ.CONTROL_TYPE.PROPORTIONAL)
+  ctrRotate.setDelay(0);
 
   async function start(_event: CustomEvent): Promise<void> {
     viewport = _event.detail;
 
-    ƒ.Loop.addEventListener(ƒ.EVENT.LOOP_FRAME, update);
-    ƒ.Loop.start();  // start the game loop to continously draw the viewport, update the audiosystem and drive the physics i/a
 
-    //da krieg ich mein ganzen Stuff her
+
     let graph: ƒ.Node = viewport.getBranch();
-    let laser: ƒ.Node = graph.getChildrenByName("Lasers")[0].getChildrenByName("LaserRed")[0];
+    laserformation = graph.getChildrenByName("Laserformation")[0];
 
-    transform = laser.mtxLocal;
-    agentRed = graph.getChildrenByName("Agents")[0].getChildrenByName("AgentRed")[0];
-    agentBlue = graph.getChildrenByName("Agents")[0].getChildrenByName("AgentBlue")[0];
+    agent = new Agent();
+    graph.getChildrenByName("Agents")[0].addChild(agent);
 
     viewport.camera.mtxPivot.translateZ(-16);
+    graph.addComponent(new ƒ.ComponentAudioListener());
 
-    let graphLaser: ƒ.Graph = await ƒ.Project.registerAsGraph(laser, false);
-    let copy: ƒ.GraphInstance = new ƒ.GraphInstance(graphLaser);
+    let graphLaser: ƒ.Graph = <ƒ.Graph>FudgeCore.Project.resources["Graph|2021-10-28T13:07:23.830Z|93008"];
 
-    graph.getChildrenByName("Lasers")[0].addChild(copy);
+    for (var i = 0; i < 2; i++) {
+      for (var j = 0; j < 3; j++) {
+        let laserarr = await ƒ.Project.createGraphInstance(graphLaser)
+        graph.getChildrenByName("Laserformation")[0].addChild(laserarr);
+        laserarr.mtxLocal.translateY(-5 + i * 6);
+        laserarr.mtxLocal.translateX(-11 + j * 6);
+      }
+    }
+
+
+    Hud.start();
 
     ƒ.Loop.addEventListener(ƒ.EVENT.LOOP_FRAME, update);
-    ƒ.Loop.start(ƒ.LOOP_MODE.TIME_REAL, 120);
-
-
+    ƒ.Loop.start(ƒ.LOOP_MODE.TIME_REAL, 60);  // start the game loop to continously draw the viewport, update the audiosystem and drive the physics i/a
   }
-
   function update(_event: Event): void {
+    let deltaTime: number = ƒ.Loop.timeFrameReal / 1000
+
+    let walkValue: number = (
+      ƒ.Keyboard.mapToValue(1, 0, [ƒ.KEYBOARD_CODE.W, ƒ.KEYBOARD_CODE.ARROW_UP])
+      + ƒ.Keyboard.mapToValue(-1, 0, [ƒ.KEYBOARD_CODE.S, ƒ.KEYBOARD_CODE.ARROW_DOWN])
+    );
+    ctrForward.setInput(walkValue * deltaTime)
+    agent.mtxLocal.translateY(ctrForward.getOutput())
+
+    let rotValue: number = (
+      ƒ.Keyboard.mapToValue(1, 0, [ƒ.KEYBOARD_CODE.A, ƒ.KEYBOARD_CODE.ARROW_LEFT])
+      + ƒ.Keyboard.mapToValue(-1, 0, [ƒ.KEYBOARD_CODE.D, ƒ.KEYBOARD_CODE.ARROW_RIGHT])
+    );
+
+      if(ƒ.Keyboard.isPressedOne([ƒ.KEYBOARD_CODE.ENTER]))
+        agent.playMusic();
+
+    ctrRotate.setInput(rotValue * deltaTime)
+    agent.mtxLocal.rotateZ(ctrRotate.getOutput())
     // ƒ.Physics.world.simulate();  // if physics is included and used
-    let deltaTime: number = ƒ.Loop.timeFrameReal / 1000;
-    let speedAgentRotation: number = 360; // meters per second
-
-    //AgentRed controlls
-    let value1: number = (
-      ƒ.Keyboard.mapToValue(-1, 0, [ƒ.KEYBOARD_CODE.S])
-      + ƒ.Keyboard.mapToValue(1, 0, [ƒ.KEYBOARD_CODE.W])
-    );
-    ctrlForward.setInput(value1 * deltaTime);
-    agentRed.mtxLocal.translateY(ctrlForward.getOutput());
-
-    if (ƒ.Keyboard.isPressedOne([ƒ.KEYBOARD_CODE.A]))
-      agentRed.mtxLocal.rotateZ(speedAgentRotation * deltaTime);
-    if (ƒ.Keyboard.isPressedOne([ƒ.KEYBOARD_CODE.D]))
-      agentRed.mtxLocal.rotateZ(-speedAgentRotation * deltaTime);
-
-    //AgentBlue controlls
-    let value2: number = (
-      ƒ.Keyboard.mapToValue(-1, 0, [ƒ.KEYBOARD_CODE.ARROW_DOWN])
-      + ƒ.Keyboard.mapToValue(1, 0, [ƒ.KEYBOARD_CODE.ARROW_UP])
-    );
-    ctrlForward.setInput(value2 * deltaTime);
-    agentBlue.mtxLocal.translateY(ctrlForward.getOutput());
-
-    if (ƒ.Keyboard.isPressedOne([ƒ.KEYBOARD_CODE.ARROW_LEFT]))
-      agentBlue.mtxLocal.rotateZ(speedAgentRotation * deltaTime);
-    if (ƒ.Keyboard.isPressedOne([ƒ.KEYBOARD_CODE.ARROW_RIGHT]))
-      agentBlue.mtxLocal.rotateZ(-speedAgentRotation * deltaTime);
-
-      
-
     viewport.draw();
-    checkCollisionRed();
+    //console.log(Laser.collision(agent, laserformation))
+    if (Laser.collision(agent, laserformation))
+      console.log("hit");
     ƒ.AudioManager.default.update();
+
+    
+    agent.healthvalue -= 0.01;
+    agent.health();
   }
-
-  function checkCollisionRed(): void {
-    let beam1: ƒ.Node = laser.getChildrenByName("LaserRedOrigin")[0].getChildren()[0];
-    let posLocal1: ƒ.Vector3 = ƒ.Vector3.TRANSFORMATION(agentRed.mtxWorld.translation, beam1.mtxWorldInverse, true);
-    let beam2: ƒ.Node = laser.getChildrenByName("LaserRedOrigin")[0].getChildren()[1];
-    let posLocal2: ƒ.Vector3 = ƒ.Vector3.TRANSFORMATION(agentRed.mtxWorld.translation, beam2.mtxWorldInverse, true);
-    let beam3: ƒ.Node = laser.getChildrenByName("LaserRedOrigin")[0].getChildren()[2];
-    let posLocal3: ƒ.Vector3 = ƒ.Vector3.TRANSFORMATION(agentRed.mtxWorld.translation, beam3.mtxWorldInverse, true);
-
-    console.log(posLocal1.x <= 2.8 && posLocal1.x >= 0 && posLocal1.y <= 0.25 && posLocal1.y >= -0.25)
-
-    if (posLocal1.x <= 2.8 && posLocal1.x >= 0 && posLocal1.y <= 0.25 && posLocal1.y >= -0.25)
-      console.log("hit");
-    if (posLocal2.x <= 2.8 && posLocal2.x >= 0 && posLocal2.y <= 0.25 && posLocal2.y >= -0.25)
-      console.log("hit");
-    if (posLocal3.x <= 2.8 && posLocal3.x >= 0 && posLocal3.y <= 0.25 && posLocal3.y >= -0.25)
-      console.log("hit");
-  }
-
-
 }
