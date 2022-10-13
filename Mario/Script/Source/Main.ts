@@ -1,10 +1,13 @@
 namespace Script {
   import ƒ = FudgeCore;
   import ƒAid = FudgeAid;
+  
+
   ƒ.Debug.info("Main Program Template running!");
 
   let viewport: ƒ.Viewport;
   let spriteNode: ƒAid.NodeSprite;
+  data;
 
   document.addEventListener("interactiveViewportStarted", <EventListener>start);
   window.addEventListener("animate",hndlAnimation)
@@ -17,6 +20,7 @@ namespace Script {
 
   async function hndlAnimation(_event: Event): Promise<void> {
     // ich glaube das Problem liegt hier dabei dass ich nicht weis wie man Daten aus dem Json file in die Methode hier lädt
+    
     let imgSpriteSheet: ƒ.TextureImage = new ƒ.TextureImage();
     await imgSpriteSheet.load("images/Spritesheet.png");
     let coat: ƒ.CoatTextured = new ƒ.CoatTextured(undefined, imgSpriteSheet);
