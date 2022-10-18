@@ -49,48 +49,6 @@
       "children": [
         {
           "ƒ.Node": {
-            "name": "Mario",
-            "active": true,
-            "components": {
-              "ComponentMesh": [
-                {
-                  "ƒ.ComponentMesh": {
-                    "idMesh": "MeshQuad|2022-10-11T14:10:20.059Z|56816",
-                    "pivot": {
-                      "translation": "[0, 0, 0]",
-                      "rotation": "[0, 0, 0]",
-                      "scaling": "[1, 1, 1]"
-                    },
-                    "Component": {
-                      "active": true
-                    }
-                  }
-                }
-              ],
-              "ComponentMaterial": [
-                {
-                  "ƒ.ComponentMaterial": {
-                    "sortForAlpha": false,
-                    "clrPrimary": "[1, 1, 1, 1]",
-                    "clrSecondary": "[1, 1, 1, 1]",
-                    "pivot": {
-                      "translation": "[0.06100000441074371, 0.010000314563512802]",
-                      "rotation": 0,
-                      "scaling": "[0.05000000447034836, 0.04999992996454239]"
-                    },
-                    "Component": {
-                      "active": true
-                    },
-                    "idMaterial": "Material|2022-10-11T14:48:33.891Z|12332"
-                  }
-                }
-              ]
-            },
-            "children": []
-          }
-        },
-        {
-          "ƒ.Node": {
             "name": "Enemies",
             "active": true,
             "components": {},
@@ -213,6 +171,37 @@
               }
             ]
           }
+        },
+        {
+          "ƒ.Node": {
+            "name": "Mario Position",
+            "active": true,
+            "components": {
+              "ComponentTransform": [
+                {
+                  "ƒ.ComponentTransform": {
+                    "local": {
+                      "translation": "[0, 0, 0]",
+                      "rotation": "[0, 0, 0]",
+                      "scaling": "[1, 1, 1]"
+                    },
+                    "Component": {
+                      "active": true
+                    }
+                  }
+                }
+              ]
+            },
+            "children": [
+              {
+                "ƒ.GraphInstance": {
+                  "deserializeFromSource": true,
+                  "name": "Mario",
+                  "idSource": "Graph|2022-10-13T12:33:01.194Z|39594"
+                }
+              }
+            ]
+          }
         }
       ],
       "idResource": "Graph|2022-10-06T13:13:27.797Z|68817",
@@ -284,6 +273,50 @@
       },
       "children": [],
       "idResource": "Graph|2022-10-11T14:12:00.036Z|68891",
+      "type": "Graph"
+    }
+  },
+  "Graph|2022-10-13T12:33:01.194Z|39594": {
+    "ƒ.Graph": {
+      "name": "Mario",
+      "active": true,
+      "components": {
+        "ComponentMesh": [
+          {
+            "ƒ.ComponentMesh": {
+              "idMesh": "MeshQuad|2022-10-11T14:10:20.059Z|56816",
+              "pivot": {
+                "translation": "[0, 0, 0]",
+                "rotation": "[0, 0, 0]",
+                "scaling": "[1, 1, 1]"
+              },
+              "Component": {
+                "active": true
+              }
+            }
+          }
+        ],
+        "ComponentMaterial": [
+          {
+            "ƒ.ComponentMaterial": {
+              "sortForAlpha": false,
+              "clrPrimary": "[1, 1, 1, 1]",
+              "clrSecondary": "[1, 1, 1, 1]",
+              "pivot": {
+                "translation": "[0.06100000441074371, 0.010000314563512802]",
+                "rotation": 0,
+                "scaling": "[0.05000000447034836, 0.04999992996454239]"
+              },
+              "Component": {
+                "active": true
+              },
+              "idMaterial": "Material|2022-10-11T14:48:33.891Z|12332"
+            }
+          }
+        ]
+      },
+      "children": [],
+      "idResource": "Graph|2022-10-13T12:33:01.194Z|39594",
       "type": "Graph"
     }
   }
