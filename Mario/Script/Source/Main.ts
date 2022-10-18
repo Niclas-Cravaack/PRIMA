@@ -48,7 +48,6 @@ namespace Script {
   
   
   function update(_event: Event): void {
-    let cmpTransL: ƒ.ComponentTransform = marioPos.getComponent(ƒ.ComponentTransform);
     if(ƒ.Keyboard.isPressedOne([ƒ.KEYBOARD_CODE.D,ƒ.KEYBOARD_CODE.ARROW_RIGHT])){
       marioPos.mtxLocal.translateX(walkSpeed*ƒ.Loop.timeFrameGame/1000);
     }

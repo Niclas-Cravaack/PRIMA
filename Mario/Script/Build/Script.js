@@ -73,7 +73,6 @@ var Script;
         ƒ.Loop.addEventListener("loopFrame" /* ƒ.EVENT.LOOP_FRAME */, update);
     }
     function update(_event) {
-        let cmpTransL = marioPos.getComponent(ƒ.ComponentTransform);
         if (ƒ.Keyboard.isPressedOne([ƒ.KEYBOARD_CODE.D, ƒ.KEYBOARD_CODE.ARROW_RIGHT])) {
             marioPos.mtxLocal.translateX(walkSpeed * ƒ.Loop.timeFrameGame / 1000);
         }
