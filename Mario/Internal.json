@@ -174,7 +174,7 @@
         },
         {
           "ƒ.Node": {
-            "name": "Mario Position",
+            "name": "MarioPosition",
             "active": true,
             "components": {
               "ComponentTransform": [

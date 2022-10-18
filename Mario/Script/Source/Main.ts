@@ -5,8 +5,9 @@ namespace Script {
   ƒ.Debug.info("Main Program Template running!");
 
   let viewport: ƒ.Viewport;
-  document.addEventListener("interactiveViewportStarted", <EventListener>start);
+  document.addEventListener("interactiveViewportStarted", <EventListener><unknown>start);
   let marioPos: ƒ.Node;
+  let walkSpeed: number = 1.5;
 
  
   async function start(_event: CustomEvent): Promise<void> {
@@ -21,13 +22,11 @@ namespace Script {
     // create Mario
     let marioNode: ƒAid.NodeSprite = new ƒAid.NodeSprite("Mario");
     marioNode.addComponent(new ƒ.ComponentTransform());
-    marioNode.mtxLocal.rotateY(180);
-    marioNode.mtxLocal.translateY(-0.05);
     marioPos.appendChild(marioNode);
 
     // texture Mario
     let texture: ƒ.TextureImage = new ƒ.TextureImage();
-    await texture.load("./images/Spritesheet.png");
+    await texture.load("images/Spritesheet.png");
     let coat: ƒ.CoatTextured = new ƒ.CoatTextured(ƒ.Color.CSS("white"), texture);
 
     // animation
@@ -50,10 +49,21 @@ namespace Script {
   
   function update(_event: Event): void {
     let cmpTransL: ƒ.ComponentTransform = marioPos.getComponent(ƒ.ComponentTransform);
-    cmpTransL.mtxLocal.translateX(0.01);
+    if(ƒ.Keyboard.isPressedOne([ƒ.KEYBOARD_CODE.D,ƒ.KEYBOARD_CODE.ARROW_RIGHT])){
+      marioPos.mtxLocal.translateX(walkSpeed*ƒ.Loop.timeFrameGame/1000);
+    }
+    if(ƒ.Keyboard.isPressedOne([ƒ.KEYBOARD_CODE.A,ƒ.KEYBOARD_CODE.ARROW_LEFT])){
+      marioPos.mtxLocal.translateX(-walkSpeed*ƒ.Loop.timeFrameGame/1000);
+    
+    }
+  
+  
+    //let cmpTransL: ƒ.ComponentTransform = marioPos.getComponent(ƒ.ComponentTransform);
+    //cmpTransL.mtxLocal.translateX(0.01);
     // ƒ.Physics.simulate();  // if physics is included and used
     viewport.draw();
     ƒ.AudioManager.default.update();
+    
     
   }
 }
