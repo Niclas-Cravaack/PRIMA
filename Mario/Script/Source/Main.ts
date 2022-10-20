@@ -7,7 +7,7 @@ namespace Script {
   let viewport: ƒ.Viewport;
   document.addEventListener("interactiveViewportStarted", <EventListener><unknown>start);
   let marioPos: ƒ.Node;
-  let walkSpeed: number = 1.5;
+  let walkSpeed: number = 2;
 
  
   async function start(_event: CustomEvent): Promise<void> {
@@ -32,7 +32,7 @@ namespace Script {
     // animation
     // Walk
     let animWalk: ƒAid.SpriteSheetAnimation = new ƒAid.SpriteSheetAnimation("Walk", coat);
-    animWalk.generateByGrid(ƒ.Rectangle.GET(176, 38, 16, 32), 3, 32, ƒ.ORIGIN2D.TOPLEFT, ƒ.Vector2.X(52));
+    animWalk.generateByGrid(ƒ.Rectangle.GET(176, 38, 16, 32), 3, 0, ƒ.ORIGIN2D.TOPLEFT, ƒ.Vector2.X(52));
     // Run
     let animRun: ƒAid.SpriteSheetAnimation = new ƒAid.SpriteSheetAnimation("Run", coat);
     animRun.generateByGrid(ƒ.Rectangle.GET(332, 38, 18, 32), 3, 32, ƒ.ORIGIN2D.TOPLEFT, ƒ.Vector2.X(52));
