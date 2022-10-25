@@ -102,10 +102,10 @@ namespace Script {
   
         // turn Mario
         if (this.ctrSideways.getOutput() > 0) {
-          this.node.mtxLocal.rotation = ƒ.Vector3.Y(180);
+          this.node.mtxLocal.rotation = ƒ.Vector3.Y(0);
         }
         else if (this.ctrSideways.getOutput() < 0) {
-          this.node.mtxLocal.rotation = ƒ.Vector3.Y(0);
+          this.node.mtxLocal.rotation = ƒ.Vector3.Y(180);
         }
   
         this.fall(deltaTime);
