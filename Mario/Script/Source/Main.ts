@@ -9,6 +9,7 @@ namespace Script {
 
   // global variables for animation
   let mario: Mario;
+  export let branch : ƒ.Node;
 
   export enum Animation {
     Idle, Walk, Run
@@ -17,9 +18,8 @@ namespace Script {
   async function start(_event: CustomEvent): Promise<void> {
     viewport = _event.detail;
     ƒ.Loop.start();  // start the game loop to continously draw the viewport, update the audiosystem and drive the physics i/a
-
+    branch = viewport.getBranch();
     // get Nodes
-    let branch: ƒ.Node = viewport.getBranch();
     let texture: ƒ.TextureImage = new ƒ.TextureImage();
     await texture.load("images/Spritesheet.png");
     mario = new Mario(texture);
