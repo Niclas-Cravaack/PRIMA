@@ -8,6 +8,8 @@ declare namespace Script {
     }
 }
 declare namespace Script {
+    import ƒ = FudgeCore;
+    let branch: ƒ.Node;
     enum Animation {
         Idle = 0,
         Walk = 1,
@@ -50,5 +52,6 @@ declare namespace Script {
          * fall
          */
         fall(_deltaTime: number): void;
+        collision(): void;
     }
 }

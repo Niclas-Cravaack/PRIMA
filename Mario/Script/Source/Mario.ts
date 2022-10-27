@@ -12,7 +12,7 @@ namespace Script {
   
 
       public animState: Animation;
-      public spriteSheedPath: string = "images/Spritesheet.png";
+      public spriteSheedPath: string = "Images/Spritesheet.png";
   
       private moveSpeed: number = 4;
       private jumpForce: number = 5;
@@ -162,12 +162,10 @@ namespace Script {
         let pos: ƒ.Vector3 = this.pos.mtxLocal.translation;
         for(let block of blocks.getChildren()){
           let posBlock: ƒ.Vector3 = block.mtxLocal.translation
-            if(this.pos.mtxLocal.translation.x> block.mtxLocal.translation.x-0,5&& 
-              this.pos.mtxLocal.translation.x< block.mtxLocal.translation.x+0,5){
-              if(this.pos.mtxLocal.translation.y> block.mtxLocal.translation.y+0,2){
-                
-                
-                this.pos.mtxLocal.translation.y= block.mtxLocal.translation.y+0.5
+            if(pos.x> posBlock.x-0,5 && pos.x< posBlock.x+0,5){
+              if(pos.y> posBlock.y+0,3){ 
+                               
+                pos.y= posBlock.y+0.5
 
               }
                          

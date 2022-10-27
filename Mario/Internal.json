@@ -41,11 +41,31 @@
       }
     }
   },
+  "Audio|2022-10-27T12:31:41.066Z|94775": {
+    "ƒ.Audio": {
+      "url": "Sounds\\SuperMarioBros.mp3",
+      "idResource": "Audio|2022-10-27T12:31:41.066Z|94775",
+      "name": "Sounds\\SuperMarioBros.mp3",
+      "type": "Audio"
+    }
+  },
   "Graph|2022-10-06T13:13:27.797Z|68817": {
     "ƒ.Graph": {
       "name": "Level",
       "active": true,
-      "components": {},
+      "components": {
+        "ComponentAudio": [
+          {
+            "ƒ.ComponentAudio": {
+              "active": false,
+              "idResource": "Audio|2022-10-27T12:31:41.066Z|94775",
+              "playing": false,
+              "loop": false,
+              "volume": 1
+            }
+          }
+        ]
+      },
       "children": [
         {
           "ƒ.Node": {
@@ -64,7 +84,7 @@
                 {
                   "ƒ.ComponentTransform": {
                     "local": {
-                      "translation": "[0, -2.499999523162842, 0]",
+                      "translation": "[0, -0.9999995231628418, 0]",
                       "rotation": "[0, 0, 0]",
                       "scaling": "[1, 1, 1]"
                     },
