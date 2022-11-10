@@ -41,6 +41,7 @@ namespace Script {
   }
 
   function update(_event: Event): void {
+    mario.collision();
     mario.update();
     
 

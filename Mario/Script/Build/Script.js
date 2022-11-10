@@ -67,6 +67,7 @@ var Script;
         ƒ.Loop.addEventListener("loopFrame" /* ƒ.EVENT.LOOP_FRAME */, update);
     }
     function update(_event) {
+        mario.collision();
         mario.update();
         // ƒ.Physics.simulate();  // if physics is included and used
         viewport.draw();
