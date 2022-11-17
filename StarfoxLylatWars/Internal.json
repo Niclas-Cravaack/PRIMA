@@ -1,1 +1,121 @@
-{}
+{
+  "Material|2022-11-17T13:00:22.221Z|89181": {
+    "ƒ.Material": {
+      "name": "ShaderFlat",
+      "idResource": "Material|2022-11-17T13:00:22.221Z|89181",
+      "shader": "ShaderFlat",
+      "coat": {
+        "ƒ.CoatRemissive": {
+          "color": "[0.5137254901960784, 0.047058823529411764, 0.047058823529411764, 1]",
+          "diffuse": 1,
+          "specular": 0
+        }
+      }
+    }
+  },
+  "MeshCube|2022-11-17T13:23:11.351Z|19132": {
+    "ƒ.MeshCube": {
+      "idResource": "MeshCube|2022-11-17T13:23:11.351Z|19132",
+      "name": "MeshCube",
+      "type": "MeshCube"
+    }
+  },
+  "MeshObj|2022-11-17T13:36:04.584Z|17688": {
+    "ƒ.MeshObj": {
+      "idResource": "MeshObj|2022-11-17T13:36:04.584Z|17688",
+      "name": "Models\\StarFox.obj",
+      "type": "MeshObj",
+      "url": "Models\\StarFox.obj"
+    }
+  },
+  "Graph|2022-11-17T12:59:41.538Z|98686": {
+    "ƒ.Graph": {
+      "name": "NewGraph",
+      "active": true,
+      "components": {
+        "ComponentLight": [
+          {
+            "ƒ.ComponentLight": {
+              "pivot": {
+                "translation": "[0, 0, 0]",
+                "rotation": "[0, 0, 0]",
+                "scaling": "[1, 1, 1]"
+              },
+              "light": {
+                "ƒ.LightAmbient": {
+                  "color": "[1, 1, 1, 1]"
+                }
+              },
+              "Component": {
+                "active": true
+              }
+            }
+          }
+        ]
+      },
+      "children": [
+        {
+          "ƒ.Node": {
+            "name": "InterceptorPos",
+            "active": true,
+            "components": {},
+            "children": [
+              {
+                "ƒ.Node": {
+                  "name": "InterceptorMesh",
+                  "active": true,
+                  "components": {
+                    "ComponentMaterial": [
+                      {
+                        "ƒ.ComponentMaterial": {
+                          "sortForAlpha": false,
+                          "clrPrimary": "[1, 1, 1, 1]",
+                          "clrSecondary": "[1, 1, 1, 1]",
+                          "pivot": {
+                            "translation": "[0, 0]",
+                            "rotation": 0,
+                            "scaling": "[1, 1]"
+                          },
+                          "Component": {
+                            "active": true
+                          },
+                          "idMaterial": "Material|2022-11-17T13:00:22.221Z|89181"
+                        }
+                      }
+                    ],
+                    "ComponentMesh": [
+                      {
+                        "ƒ.ComponentMesh": {
+                          "idMesh": "MeshObj|2022-11-17T13:53:02.429Z|16165",
+                          "pivot": {
+                            "translation": "[0, 0, 0]",
+                            "rotation": "[0, 0, 0]",
+                            "scaling": "[1, 1, 1]"
+                          },
+                          "Component": {
+                            "active": true
+                          }
+                        }
+                      }
+                    ]
+                  },
+                  "children": []
+                }
+              }
+            ]
+          }
+        }
+      ],
+      "idResource": "Graph|2022-11-17T12:59:41.538Z|98686",
+      "type": "Graph"
+    }
+  },
+  "MeshObj|2022-11-17T13:53:02.429Z|16165": {
+    "ƒ.MeshObj": {
+      "idResource": "MeshObj|2022-11-17T13:53:02.429Z|16165",
+      "name": "Models\\StarfoxInterceptor.obj",
+      "type": "MeshObj",
+      "url": "Models\\StarfoxInterceptor.obj"
+    }
+  }
+}
