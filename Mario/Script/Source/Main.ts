@@ -20,6 +20,8 @@ namespace Script {
 
   async function start(_event: CustomEvent): Promise<void> {
     viewport = _event.detail;
+    viewport.camera.mtxPivot.translateZ(10);
+    viewport.camera.mtxPivot.rotateY(180)
     ƒ.Loop.start();  // start the game loop to continously draw the viewport, update the audiosystem and drive the physics i/a
     branch = viewport.getBranch();
     

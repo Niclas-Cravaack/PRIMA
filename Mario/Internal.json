@@ -49,6 +49,37 @@
       "type": "Audio"
     }
   },
+  "MeshCube|2022-11-10T13:31:16.117Z|70760": {
+    "ƒ.MeshCube": {
+      "idResource": "MeshCube|2022-11-10T13:31:16.117Z|70760",
+      "name": "MeshCube",
+      "type": "MeshCube"
+    }
+  },
+  "Material|2022-10-11T14:20:54.326Z|55023": {
+    "ƒ.Material": {
+      "name": "ShaderFloor",
+      "idResource": "Material|2022-10-11T14:20:54.326Z|55023",
+      "shader": "ShaderLitTextured",
+      "coat": {
+        "ƒ.CoatTextured": {
+          "color": "[1, 1, 1, 1]",
+          "idTexture": "TextureImage|2022-10-11T14:33:26.809Z|72157"
+        }
+      }
+    }
+  },
+  "TextureImage|2022-10-11T14:33:26.809Z|72157": {
+    "ƒ.TextureImage": {
+      "url": "images\\ChocolateFortress.png",
+      "type": "TextureImage",
+      "Texture": {
+        "idResource": "TextureImage|2022-10-11T14:33:26.809Z|72157",
+        "name": "ChoclateFloor",
+        "mipmap": "CRISP"
+      }
+    }
+  },
   "Graph|2022-10-06T13:13:27.797Z|68817": {
     "ƒ.Graph": {
       "name": "Level",
@@ -214,34 +245,60 @@
             },
             "children": []
           }
+        },
+        {
+          "ƒ.Node": {
+            "name": "Block",
+            "active": true,
+            "components": {
+              "ComponentMesh": [
+                {
+                  "ƒ.ComponentMesh": {
+                    "idMesh": "MeshCube|2022-11-10T13:31:16.117Z|70760",
+                    "pivot": {
+                      "translation": "[0, 0, 0]",
+                      "rotation": "[0, 0, 0]",
+                      "scaling": "[1, 1, 1]"
+                    },
+                    "Component": {
+                      "active": true
+                    }
+                  }
+                }
+              ],
+              "ComponentMaterial": [
+                {
+                  "ƒ.ComponentMaterial": {
+                    "sortForAlpha": false,
+                    "clrPrimary": "[1, 1, 1, 1]",
+                    "clrSecondary": "[1, 1, 1, 1]",
+                    "pivot": {
+                      "translation": "[0, 0]",
+                      "rotation": 0,
+                      "scaling": "[1, 1]"
+                    },
+                    "Component": {
+                      "active": true
+                    },
+                    "idMaterial": "Material|2022-10-11T14:20:54.326Z|55023"
+                  }
+                }
+              ],
+              "CustomComponentScript": [
+                {
+                  "Script.CustomComponentScript": {
+                    "active": true,
+                    "message": "CustomComponentScript added to "
+                  }
+                }
+              ]
+            },
+            "children": []
+          }
         }
       ],
       "idResource": "Graph|2022-10-06T13:13:27.797Z|68817",
       "type": "Graph"
-    }
-  },
-  "Material|2022-10-11T14:20:54.326Z|55023": {
-    "ƒ.Material": {
-      "name": "ShaderFloor",
-      "idResource": "Material|2022-10-11T14:20:54.326Z|55023",
-      "shader": "ShaderLitTextured",
-      "coat": {
-        "ƒ.CoatTextured": {
-          "color": "[1, 1, 1, 1]",
-          "idTexture": "TextureImage|2022-10-11T14:33:26.809Z|72157"
-        }
-      }
-    }
-  },
-  "TextureImage|2022-10-11T14:33:26.809Z|72157": {
-    "ƒ.TextureImage": {
-      "url": "images\\ChocolateFortress.png",
-      "type": "TextureImage",
-      "Texture": {
-        "idResource": "TextureImage|2022-10-11T14:33:26.809Z|72157",
-        "name": "ChoclateFloor",
-        "mipmap": "CRISP"
-      }
     }
   },
   "Graph|2022-10-11T14:12:00.036Z|68891": {

@@ -26,9 +26,7 @@ namespace Script {
     public hndEvent = (_event: Event): void => {
       switch (_event.type) {
         case ƒ.EVENT.COMPONENT_ADD:
-          //ƒ.Debug.log(this.message, this.node);
-          ƒ.Loop.addEventListener(ƒ.EVENT.LOOP_FRAME, this.sayHello)
-
+          ƒ.Debug.log(this.message, this.node);
           break;
         case ƒ.EVENT.COMPONENT_REMOVE:
           this.removeEventListener(ƒ.EVENT.COMPONENT_ADD, this.hndEvent);
@@ -39,9 +37,7 @@ namespace Script {
           break;
       }
     }
-    public sayHello(_event: Event): void {
-      console.log("hallo");
-    }
+
     // protected reduceMutator(_mutator: ƒ.Mutator): void {
     //   // delete properties that should not be mutated
     //   // undefined properties and private fields (#) will not be included by default

@@ -22,7 +22,8 @@ var Script;
         hndEvent = (_event) => {
             switch (_event.type) {
                 case "componentAdd" /* ƒ.EVENT.COMPONENT_ADD */:
-                    ƒ.Debug.log(this.message, this.node);
+                    //ƒ.Debug.log(this.message, this.node);
+                    ƒ.Loop.addEventListener("loopFrame" /* ƒ.EVENT.LOOP_FRAME */, this.sayHello);
                     break;
                 case "componentRemove" /* ƒ.EVENT.COMPONENT_REMOVE */:
                     this.removeEventListener("componentAdd" /* ƒ.EVENT.COMPONENT_ADD */, this.hndEvent);
@@ -33,6 +34,9 @@ var Script;
                     break;
             }
         };
+        sayHello(_event) {
+            console.log("hallo");
+        }
     }
     Script.CustomComponentScript = CustomComponentScript;
 })(Script || (Script = {}));
@@ -55,6 +59,8 @@ var Script;
     })(Animation = Script.Animation || (Script.Animation = {}));
     async function start(_event) {
         viewport = _event.detail;
+        viewport.camera.mtxPivot.translateZ(10);
+        viewport.camera.mtxPivot.rotateY(180);
         ƒ.Loop.start(); // start the game loop to continously draw the viewport, update the audiosystem and drive the physics i/a
         Script.branch = viewport.getBranch();
         Script.branch.addComponent(cmpAudio);
@@ -159,10 +165,10 @@ var Script;
             }
             // turn Mario
             if (this.ctrSideways.getOutput() > 0) {
-                this.node.mtxLocal.rotation = ƒ.Vector3.Y(180);
+                this.node.mtxLocal.rotation = ƒ.Vector3.Y(0);
             }
             else if (this.ctrSideways.getOutput() < 0) {
-                this.node.mtxLocal.rotation = ƒ.Vector3.Y(0);
+                this.node.mtxLocal.rotation = ƒ.Vector3.Y(180);
             }
             this.fall(deltaTime);
         }
