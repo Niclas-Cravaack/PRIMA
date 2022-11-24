@@ -3,7 +3,7 @@ namespace Script {
   ƒ.Debug.info("Main Program Template running!");
 
   let viewport: ƒ.Viewport;
-  
+  let cmpCamera: ƒ.ComponentCamera;
   
   
   document.addEventListener("interactiveViewportStarted", <EventListener>start);
@@ -19,6 +19,13 @@ namespace Script {
     
     ƒ.Loop.addEventListener(ƒ.EVENT.LOOP_FRAME, update);
    ƒ.Loop.start();  // start the game loop to continously draw the viewport, update the audiosystem and drive the physics i/a
+  }
+  function control () :void{
+    if (ƒ.Keyboard.isPressedOne([ƒ.KEYBOARD_CODE.W])){
+      EngineScript.thrust();
+    }
+
+
   }
 
   function update(_event: Event): void {

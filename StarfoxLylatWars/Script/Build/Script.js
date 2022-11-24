@@ -40,11 +40,11 @@ var Script;
 (function (Script) {
     var ƒ = FudgeCore;
     ƒ.Project.registerScriptNamespace(Script); // Register the namespace to FUDGE for serialization
-    class SpaceShipMovement extends ƒ.ComponentScript {
+    class EngineScript extends ƒ.ComponentScript {
         // Register the script as component for use in the editor via drag&drop
-        static iSubclass = ƒ.Component.registerSubclass(SpaceShipMovement);
+        static iSubclass = ƒ.Component.registerSubclass(EngineScript);
         // Properties may be mutated by users in the editor via the automatically created user interface
-        message = "SpaceShipMovement added to ";
+        message = "EngineScript added to ";
         rgdBodySpaceship;
         pitchF = 20;
         rollF = 20;
@@ -132,13 +132,14 @@ var Script;
             this.rgdBodySpaceship.applyTorque(ƒ.Vector3.SCALE(this.relativeZ, 1));
         }
     }
-    Script.SpaceShipMovement = SpaceShipMovement;
+    Script.EngineScript = EngineScript;
 })(Script || (Script = {}));
 var Script;
 (function (Script) {
     var ƒ = FudgeCore;
     ƒ.Debug.info("Main Program Template running!");
     let viewport;
+    let cmpCamera;
     document.addEventListener("interactiveViewportStarted", start);
     function start(_event) {
         viewport = _event.detail;
@@ -149,6 +150,11 @@ var Script;
         shipRigidBody.applyForce(ƒ.Vector3.Z(1000));
         ƒ.Loop.addEventListener("loopFrame" /* ƒ.EVENT.LOOP_FRAME */, update);
         ƒ.Loop.start(); // start the game loop to continously draw the viewport, update the audiosystem and drive the physics i/a
+    }
+    function control() {
+        if (ƒ.Keyboard.isPressedOne([ƒ.KEYBOARD_CODE.W])) {
+            Script.EngineScript.thrust();
+        }
     }
     function update(_event) {
         ƒ.Physics.simulate(); // if physics is included and used

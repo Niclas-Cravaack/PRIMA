@@ -2,11 +2,11 @@ namespace Script {
     import ƒ = FudgeCore;
     ƒ.Project.registerScriptNamespace(Script);  // Register the namespace to FUDGE for serialization
   
-    export class SpaceShipMovement extends ƒ.ComponentScript {
+    export class EngineScript extends ƒ.ComponentScript {
       // Register the script as component for use in the editor via drag&drop
-      public static readonly iSubclass: number = ƒ.Component.registerSubclass(SpaceShipMovement);
+      public static readonly iSubclass: number = ƒ.Component.registerSubclass(EngineScript);
       // Properties may be mutated by users in the editor via the automatically created user interface
-      public message: string = "SpaceShipMovement added to ";
+      public message: string = "EngineScript added to ";
   
   
       private rgdBodySpaceship: ƒ.ComponentRigidbody;

@@ -9,7 +9,7 @@ declare namespace Script {
 }
 declare namespace Script {
     import ƒ = FudgeCore;
-    class SpaceShipMovement extends ƒ.ComponentScript {
+    class EngineScript extends ƒ.ComponentScript {
         static readonly iSubclass: number;
         message: string;
         private rgdBodySpaceship;
