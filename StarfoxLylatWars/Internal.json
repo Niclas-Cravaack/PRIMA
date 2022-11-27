@@ -1,52 +1,5 @@
 {
-  "MeshCube|2022-11-17T13:23:11.351Z|19132": {
-    "ƒ.MeshCube": {
-      "idResource": "MeshCube|2022-11-17T13:23:11.351Z|19132",
-      "name": "MeshCube",
-      "type": "MeshCube"
-    }
-  },
-  "MeshObj|2022-11-17T13:53:02.429Z|16165": {
-    "ƒ.MeshObj": {
-      "idResource": "MeshObj|2022-11-17T13:53:02.429Z|16165",
-      "name": "Models\\StarfoxInterceptor.obj",
-      "type": "MeshObj",
-      "url": "Models\\StarfoxInterceptor.obj"
-    }
-  },
-  "Material|2022-11-17T14:02:00.223Z|39324": {
-    "ƒ.Material": {
-      "name": "ShaderGouraud",
-      "idResource": "Material|2022-11-17T14:02:00.223Z|39324",
-      "shader": "ShaderGouraud",
-      "coat": {
-        "ƒ.CoatRemissive": {
-          "color": "[0.5529411764705883, 0.1450980392156863, 0.1450980392156863, 1]",
-          "diffuse": 1,
-          "specular": 0
-        }
-      }
-    }
-  },
-  "MeshQuad|2022-11-22T15:04:36.306Z|97964": {
-    "ƒ.MeshQuad": {
-      "idResource": "MeshQuad|2022-11-22T15:04:36.306Z|97964",
-      "name": "MeshQuad"
-    }
-  },
-  "Material|2022-11-22T15:07:44.740Z|42559": {
-    "ƒ.Material": {
-      "name": "ShaderLit",
-      "idResource": "Material|2022-11-22T15:07:44.740Z|42559",
-      "shader": "ShaderLit",
-      "coat": {
-        "ƒ.CoatColored": {
-          "color": "[1, 1, 1, 1]"
-        }
-      }
-    }
-  },
-  "Graph|2022-11-17T12:59:41.538Z|98686": {
+  "Graph|2022-11-27T14:52:05.631Z|50961": {
     "ƒ.Graph": {
       "name": "Game",
       "active": true,
@@ -56,7 +9,7 @@
             "ƒ.ComponentLight": {
               "pivot": {
                 "translation": "[0, 0, 0]",
-                "rotation": "[90, 0, 0]",
+                "rotation": "[40, -60, 0]",
                 "scaling": "[1, 1, 1]"
               },
               "light": {
@@ -76,13 +29,45 @@
           "ƒ.Node": {
             "name": "InterceptorPos",
             "active": true,
-            "components": {},
+            "components": {
+              "ComponentTransform": [
+                {
+                  "ƒ.ComponentTransform": {
+                    "local": {
+                      "translation": "[0, 0, 0]",
+                      "rotation": "[0, 0, 0]",
+                      "scaling": "[1, 1, 1]"
+                    },
+                    "Component": {
+                      "active": true
+                    }
+                  }
+                }
+              ],
+              "ComponentMesh": [],
+              "ComponentMaterial": []
+            },
             "children": [
               {
                 "ƒ.Node": {
                   "name": "InterceptorMesh",
                   "active": true,
                   "components": {
+                    "ComponentMesh": [
+                      {
+                        "ƒ.ComponentMesh": {
+                          "idMesh": "MeshObj|2022-11-27T14:52:41.045Z|88570",
+                          "pivot": {
+                            "translation": "[0, 0, 0]",
+                            "rotation": "[0, 0, 0]",
+                            "scaling": "[0.010099928826093674, 0.010099928826093674, 0.010099928826093674]"
+                          },
+                          "Component": {
+                            "active": true
+                          }
+                        }
+                      }
+                    ],
                     "ComponentMaterial": [
                       {
                         "ƒ.ComponentMaterial": {
@@ -97,22 +82,7 @@
                           "Component": {
                             "active": true
                           },
-                          "idMaterial": "Material|2022-11-17T14:02:00.223Z|39324"
-                        }
-                      }
-                    ],
-                    "ComponentMesh": [
-                      {
-                        "ƒ.ComponentMesh": {
-                          "idMesh": "MeshObj|2022-11-17T13:53:02.429Z|16165",
-                          "pivot": {
-                            "translation": "[0, 0, 0]",
-                            "rotation": "[0, 0, 0]",
-                            "scaling": "[1, 1, 1]"
-                          },
-                          "Component": {
-                            "active": true
-                          }
+                          "idMaterial": "Material|2022-11-27T14:54:56.881Z|57089"
                         }
                       }
                     ],
@@ -134,20 +104,20 @@
                       {
                         "ƒ.ComponentRigidbody": {
                           "initialization": "TO_PIVOT",
-                          "friction": -0.2,
+                          "friction": 0.2,
                           "restitution": 0.2,
                           "mass": 1,
                           "dampTranslation": 0.1,
                           "dampRotation": 0.1,
                           "effectGravity": 1,
                           "typeBody": "DYNAMIC",
-                          "typeCollider": "CUBE",
+                          "typeCollider": "PYRAMID",
                           "isTrigger": false,
-                          "id": 1,
+                          "id": 0,
                           "pivot": {
-                            "translation": "[0, 20, 0]",
-                            "rotation": "[0, 0, 0]",
-                            "scaling": "[201, 61, 159]"
+                            "translation": "[0, 0.1600000113248825, -0.7900000214576721]",
+                            "rotation": "[90, 0, 0]",
+                            "scaling": "[1.6000001430511475, 1.6000001430511475, 1]"
                           },
                           "Component": {
                             "active": true
@@ -164,23 +134,23 @@
         },
         {
           "ƒ.Node": {
-            "name": "Levels",
+            "name": "Level",
             "active": true,
             "components": {},
             "children": [
               {
                 "ƒ.Node": {
-                  "name": "MapOne",
+                  "name": "Map",
                   "active": true,
                   "components": {
                     "ComponentMesh": [
                       {
                         "ƒ.ComponentMesh": {
-                          "idMesh": "MeshQuad|2022-11-22T15:04:36.306Z|97964",
+                          "idMesh": "MeshTerrain|2022-11-27T14:56:42.768Z|40063",
                           "pivot": {
-                            "translation": "[0, -100, 0]",
-                            "rotation": "[-90, 0, 0]",
-                            "scaling": "[1000, 1000, 1]"
+                            "translation": "[0, 0, 0]",
+                            "rotation": "[0, 0, 0]",
+                            "scaling": "[1000, 90, 1000]"
                           },
                           "Component": {
                             "active": true
@@ -192,7 +162,7 @@
                       {
                         "ƒ.ComponentMaterial": {
                           "sortForAlpha": false,
-                          "clrPrimary": "[1, 1, 1, 1]",
+                          "clrPrimary": "[0.07450980392156863, 0.48627450980392156, 0.09019607843137255, 1]",
                           "clrSecondary": "[1, 1, 1, 1]",
                           "pivot": {
                             "translation": "[0, 0]",
@@ -202,7 +172,7 @@
                           "Component": {
                             "active": true
                           },
-                          "idMaterial": "Material|2022-11-22T15:07:44.740Z|42559"
+                          "idMaterial": "Material|2022-11-27T14:54:56.881Z|57089"
                         }
                       }
                     ]
@@ -212,77 +182,61 @@
               }
             ]
           }
-        },
-        {
-          "ƒ.Node": {
-            "name": "Items",
-            "active": true,
-            "components": {},
-            "children": [
-              {
-                "ƒ.Node": {
-                  "name": "ItemOne",
-                  "active": true,
-                  "components": {},
-                  "children": []
-                }
-              }
-            ]
-          }
-        },
-        {
-          "ƒ.Node": {
-            "name": "Enemies",
-            "active": true,
-            "components": {},
-            "children": [
-              {
-                "ƒ.Node": {
-                  "name": "Boss",
-                  "active": true,
-                  "components": {},
-                  "children": []
-                }
-              },
-              {
-                "ƒ.Node": {
-                  "name": "MobOne",
-                  "active": true,
-                  "components": {},
-                  "children": []
-                }
-              }
-            ]
-          }
-        },
-        {
-          "ƒ.Node": {
-            "name": "Projectiles",
-            "active": true,
-            "components": {},
-            "children": [
-              {
-                "ƒ.Node": {
-                  "name": "Shots",
-                  "active": true,
-                  "components": {},
-                  "children": []
-                }
-              },
-              {
-                "ƒ.Node": {
-                  "name": "Bomb",
-                  "active": true,
-                  "components": {},
-                  "children": []
-                }
-              }
-            ]
-          }
         }
       ],
-      "idResource": "Graph|2022-11-17T12:59:41.538Z|98686",
+      "idResource": "Graph|2022-11-27T14:52:05.631Z|50961",
       "type": "Graph"
+    }
+  },
+  "MeshObj|2022-11-27T14:52:41.045Z|88570": {
+    "ƒ.MeshObj": {
+      "idResource": "MeshObj|2022-11-27T14:52:41.045Z|88570",
+      "name": "Models\\StarfoxInterceptor.obj",
+      "type": "MeshObj",
+      "url": "Models\\StarfoxInterceptor.obj"
+    }
+  },
+  "Material|2022-11-27T14:52:45.814Z|90588": {
+    "ƒ.Material": {
+      "name": "ShaderLit",
+      "idResource": "Material|2022-11-27T14:52:45.814Z|90588",
+      "shader": "ShaderLit",
+      "coat": {
+        "ƒ.CoatColored": {
+          "color": "[1, 1, 1, 1]"
+        }
+      }
+    }
+  },
+  "MeshCube|2022-11-27T14:52:57.563Z|81532": {
+    "ƒ.MeshCube": {
+      "idResource": "MeshCube|2022-11-27T14:52:57.563Z|81532",
+      "name": "MeshCube",
+      "type": "MeshCube"
+    }
+  },
+  "Material|2022-11-27T14:54:56.881Z|57089": {
+    "ƒ.Material": {
+      "name": "ShaderGouraud",
+      "idResource": "Material|2022-11-27T14:54:56.881Z|57089",
+      "shader": "ShaderGouraud",
+      "coat": {
+        "ƒ.CoatRemissive": {
+          "color": "[1, 1, 1, 1]",
+          "diffuse": 1,
+          "specular": 0
+        }
+      }
+    }
+  },
+  "MeshTerrain|2022-11-27T14:56:42.768Z|40063": {
+    "ƒ.MeshTerrain": {
+      "idResource": "MeshTerrain|2022-11-27T14:56:42.768Z|40063",
+      "name": "MeshTerrain",
+      "type": "MeshTerrain",
+      "seed": 0,
+      "scale": "[1, 1]",
+      "resolution": "[100, 100]"
     }
   }
 }
