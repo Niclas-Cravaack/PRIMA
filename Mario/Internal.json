@@ -115,7 +115,7 @@
                 {
                   "ƒ.ComponentTransform": {
                     "local": {
-                      "translation": "[0, -0.9999995231628418, 0]",
+                      "translation": "[0, -1, 0]",
                       "rotation": "[0, 0, 0]",
                       "scaling": "[1, 1, 1]"
                     },
@@ -129,13 +129,14 @@
             "children": [
               {
                 "ƒ.Node": {
-                  "name": "FloorPosition",
+                  "name": "Floor1",
                   "active": true,
                   "components": {
-                    "ComponentTransform": [
+                    "ComponentMesh": [
                       {
-                        "ƒ.ComponentTransform": {
-                          "local": {
+                        "ƒ.ComponentMesh": {
+                          "idMesh": "MeshQuad|2022-10-11T14:10:20.059Z|56816",
+                          "pivot": {
                             "translation": "[0, 0, 0]",
                             "rotation": "[0, 0, 0]",
                             "scaling": "[1, 1, 1]"
@@ -145,28 +146,57 @@
                           }
                         }
                       }
+                    ],
+                    "ComponentMaterial": [
+                      {
+                        "ƒ.ComponentMaterial": {
+                          "sortForAlpha": false,
+                          "clrPrimary": "[1, 1, 1, 1]",
+                          "clrSecondary": "[1, 1, 1, 1]",
+                          "pivot": {
+                            "translation": "[0, 0]",
+                            "rotation": 0,
+                            "scaling": "[1, 1]"
+                          },
+                          "Component": {
+                            "active": true
+                          },
+                          "idMaterial": "Material|2022-10-11T14:20:54.326Z|55023"
+                        }
+                      }
                     ]
                   },
-                  "children": [
-                    {
-                      "ƒ.GraphInstance": {
-                        "deserializeFromSource": true,
-                        "name": "Floor",
-                        "idSource": "Graph|2022-10-11T14:12:00.036Z|68891"
-                      }
-                    }
-                  ]
+                  "children": []
                 }
               },
               {
                 "ƒ.Node": {
-                  "name": "FloorPosition",
+                  "name": "Floor2",
                   "active": true,
                   "components": {
-                    "ComponentTransform": [
+                    "ComponentMaterial": [
                       {
-                        "ƒ.ComponentTransform": {
-                          "local": {
+                        "ƒ.ComponentMaterial": {
+                          "sortForAlpha": false,
+                          "clrPrimary": "[1, 1, 1, 1]",
+                          "clrSecondary": "[1, 1, 1, 1]",
+                          "pivot": {
+                            "translation": "[0, 0]",
+                            "rotation": 0,
+                            "scaling": "[1, 1]"
+                          },
+                          "Component": {
+                            "active": true
+                          },
+                          "idMaterial": "Material|2022-10-11T14:20:54.326Z|55023"
+                        }
+                      }
+                    ],
+                    "ComponentMesh": [
+                      {
+                        "ƒ.ComponentMesh": {
+                          "idMesh": "MeshQuad|2022-10-11T14:10:20.059Z|56816",
+                          "pivot": {
                             "translation": "[1, 0, 0]",
                             "rotation": "[0, 0, 0]",
                             "scaling": "[1, 1, 1]"
@@ -178,46 +208,49 @@
                       }
                     ]
                   },
-                  "children": [
-                    {
-                      "ƒ.GraphInstance": {
-                        "deserializeFromSource": true,
-                        "name": "Floor",
-                        "idSource": "Graph|2022-10-11T14:12:00.036Z|68891"
-                      }
-                    }
-                  ]
+                  "children": []
                 }
               },
               {
                 "ƒ.Node": {
-                  "name": "FloorPosition",
+                  "name": "Floor3",
                   "active": true,
                   "components": {
-                    "ComponentTransform": [
+                    "ComponentMesh": [
                       {
-                        "ƒ.ComponentTransform": {
-                          "local": {
-                            "translation": "[-1, 0, 0]",
+                        "ƒ.ComponentMesh": {
+                          "idMesh": "MeshQuad|2022-10-11T14:10:20.059Z|56816",
+                          "pivot": {
+                            "translation": "[2, 0, 0]",
                             "rotation": "[0, 0, 0]",
-                            "scaling": "[0.9999998807907104, 1, 1]"
+                            "scaling": "[1, 1, 1]"
                           },
                           "Component": {
                             "active": true
                           }
                         }
                       }
+                    ],
+                    "ComponentMaterial": [
+                      {
+                        "ƒ.ComponentMaterial": {
+                          "sortForAlpha": false,
+                          "clrPrimary": "[1, 1, 1, 1]",
+                          "clrSecondary": "[1, 1, 1, 1]",
+                          "pivot": {
+                            "translation": "[0, 0]",
+                            "rotation": 0,
+                            "scaling": "[1, 1]"
+                          },
+                          "Component": {
+                            "active": true
+                          },
+                          "idMaterial": "Material|2022-10-11T14:20:54.326Z|55023"
+                        }
+                      }
                     ]
                   },
-                  "children": [
-                    {
-                      "ƒ.GraphInstance": {
-                        "deserializeFromSource": true,
-                        "name": "Floor",
-                        "idSource": "Graph|2022-10-11T14:12:00.036Z|68891"
-                      }
-                    }
-                  ]
+                  "children": []
                 }
               }
             ]
@@ -239,56 +272,6 @@
                     "Component": {
                       "active": true
                     }
-                  }
-                }
-              ]
-            },
-            "children": []
-          }
-        },
-        {
-          "ƒ.Node": {
-            "name": "Block",
-            "active": true,
-            "components": {
-              "ComponentMesh": [
-                {
-                  "ƒ.ComponentMesh": {
-                    "idMesh": "MeshCube|2022-11-10T13:31:16.117Z|70760",
-                    "pivot": {
-                      "translation": "[0, 0, 0]",
-                      "rotation": "[0, 0, 0]",
-                      "scaling": "[1, 1, 1]"
-                    },
-                    "Component": {
-                      "active": true
-                    }
-                  }
-                }
-              ],
-              "ComponentMaterial": [
-                {
-                  "ƒ.ComponentMaterial": {
-                    "sortForAlpha": false,
-                    "clrPrimary": "[1, 1, 1, 1]",
-                    "clrSecondary": "[1, 1, 1, 1]",
-                    "pivot": {
-                      "translation": "[0, 0]",
-                      "rotation": 0,
-                      "scaling": "[1, 1]"
-                    },
-                    "Component": {
-                      "active": true
-                    },
-                    "idMaterial": "Material|2022-10-11T14:20:54.326Z|55023"
-                  }
-                }
-              ],
-              "CustomComponentScript": [
-                {
-                  "Script.CustomComponentScript": {
-                    "active": true,
-                    "message": "CustomComponentScript added to "
                   }
                 }
               ]
