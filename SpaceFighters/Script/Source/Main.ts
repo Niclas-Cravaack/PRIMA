@@ -24,7 +24,7 @@ namespace Script {
     viewport.camera.mtxPivot.translateZ(10);
    viewport.camera.mtxPivot.rotateY(180);
 
-    f.Loop.start();
+   
 
     branch = viewport.getBranch();
     branch.addComponent(cmpAudio);
