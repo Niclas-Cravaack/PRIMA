@@ -31,15 +31,17 @@ namespace Script {
 
     //get Nodes
 
-    let texture: f.TextureImage = new f.TextureImage();
-    await texture.load("");
+    let astronautTexture: f.TextureImage = new f.TextureImage();
+    await astronautTexture.load(astronaut.spriteSheedPath);
     //creating and setting up the Astronaut
-    astronaut = new Astronaut(texture);
+    astronaut = new Astronaut(astronautTexture);
     astronaut.pos.mtxLocal.translation = new f.Vector3(-2,0,0)
     astronaut.addComponent(new ShootingScript());
 
     // creating and setting up the Alien
-    alien = new Alien(texture)
+    let alienTexture: f.TextureImage = new f.TextureImage();
+    await alienTexture.load(astronaut.spriteSheedPath);
+    alien = new Alien(alienTexture)
     alien.pos.mtxLocal.translation = new f.Vector3(-2,0,0)
     alien.addComponent(new ShootingScript()); 
 
