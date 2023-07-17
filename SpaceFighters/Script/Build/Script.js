@@ -23,7 +23,7 @@ var Script;
             this.node = new fAid.NodeSprite("Alien");
             this.node.addComponent(new f.ComponentTransform);
             this.node.getComponent(f.ComponentMesh).mtxPivot.scaleY(2);
-            this.node.mtxLocal.rotation = f.Vector3.Y(180);
+            this.node.mtxLocal.rotation = f.Vector3.Y(0);
             this.node.mtxLocal.translateY(-0.05);
             this.pos.appendChild(this.node);
             let texture = _texture;
@@ -89,14 +89,14 @@ var Script;
         jump() {
             this.ySpeed = this.jumpForce;
         }
-        fall(_deltaTime) {
-            let g = 9.81;
-            this.ySpeed -= g * _deltaTime;
-            let deltaY = this.ySpeed * _deltaTime;
-            if (this.pos.mtxLocal.translation.y + deltaY > -2) {
-                this.pos.mtxLocal.translateY(deltaY);
-            }
-        }
+        //public fall(_deltaTime: number): void {
+        // let g: number = 9.81;
+        // this.ySpeed -= g * _deltaTime;
+        //let deltaY: number = this.ySpeed * _deltaTime;
+        //if (this.pos.mtxLocal.translation.y + deltaY > -2) {
+        // this.pos.mtxLocal.translateY(deltaY);
+        // }
+        // }
         collision() {
             let blocks = Script.branch.getChildrenByName("Floors")[0];
             let pos = this.pos.mtxLocal.translation;
@@ -326,21 +326,22 @@ var Script;
     })(Animation = Script.Animation || (Script.Animation = {}));
     async function start(_event) {
         viewport = _event.detail;
-        viewport.camera.mtxPivot.translateZ(10);
+        viewport.camera.mtxPivot.translateZ(-10);
         viewport.camera.mtxPivot.rotateY(180);
-        f.Loop.start();
         Script.branch = viewport.getBranch();
         Script.branch.addComponent(cmpAudio);
         //get Nodes
-        let texture = new f.TextureImage();
-        await texture.load("");
+        let astronautTexture = new f.TextureImage();
+        await astronautTexture.load(astronaut.spriteSheedPath);
         //creating and setting up the Astronaut
-        astronaut = new Script.Astronaut(texture);
-        astronaut.pos.mtxLocal.translation = new f.Vector3(-2, 0, 0);
+        astronaut = new Script.Astronaut(astronautTexture);
+        astronaut.pos.mtxLocal.translation = new f.Vector3(4, 2, 0);
         astronaut.addComponent(new Script.ShootingScript());
         // creating and setting up the Alien
-        alien = new Script.Alien(texture);
-        alien.pos.mtxLocal.translation = new f.Vector3(-2, 0, 0);
+        let alienTexture = new f.TextureImage();
+        await alienTexture.load(astronaut.spriteSheedPath);
+        alien = new Script.Alien(alienTexture);
+        alien.pos.mtxLocal.translation = new f.Vector3(-4, 2, 0);
         alien.addComponent(new Script.ShootingScript());
         Script.branch.appendChild(astronaut.pos);
         Script.branch.appendChild(alien.pos);

@@ -19,7 +19,6 @@ declare namespace Script {
         update(): void;
         move(_deltaTime: number): void;
         jump(): void;
-        fall(_deltaTime: number): void;
         collision(): void;
     }
 }

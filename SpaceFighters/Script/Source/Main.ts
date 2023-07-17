@@ -21,7 +21,7 @@ namespace Script {
 
   async function start(_event: CustomEvent): Promise<void> {
     viewport = _event.detail;
-    viewport.camera.mtxPivot.translateZ(10);
+    viewport.camera.mtxPivot.translateZ(-10);
    viewport.camera.mtxPivot.rotateY(180);
 
    
@@ -35,14 +35,14 @@ namespace Script {
     await astronautTexture.load(astronaut.spriteSheedPath);
     //creating and setting up the Astronaut
     astronaut = new Astronaut(astronautTexture);
-    astronaut.pos.mtxLocal.translation = new f.Vector3(-2,0,0)
+    astronaut.pos.mtxLocal.translation = new f.Vector3(4,2,0)
     astronaut.addComponent(new ShootingScript());
 
     // creating and setting up the Alien
     let alienTexture: f.TextureImage = new f.TextureImage();
     await alienTexture.load(astronaut.spriteSheedPath);
     alien = new Alien(alienTexture)
-    alien.pos.mtxLocal.translation = new f.Vector3(-2,0,0)
+    alien.pos.mtxLocal.translation = new f.Vector3(-4,2,0)
     alien.addComponent(new ShootingScript()); 
 
     branch.appendChild(astronaut.pos);

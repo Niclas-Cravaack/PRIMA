@@ -32,7 +32,7 @@ namespace Script{
     
             this.node.getComponent(f.ComponentMesh).mtxPivot.scaleY(2);
     
-            this.node.mtxLocal.rotation = f.Vector3.Y(180);
+            this.node.mtxLocal.rotation = f.Vector3.Y(0);
             this.node.mtxLocal.translateY(-0.05);
             this.pos.appendChild(this.node);
     
@@ -109,14 +109,14 @@ namespace Script{
               public jump(): void {
                 this.ySpeed = this.jumpForce;
               }
-              public fall(_deltaTime: number): void {
-                let g: number = 9.81;
-                this.ySpeed -= g * _deltaTime;
-                let deltaY: number = this.ySpeed * _deltaTime;
-                if (this.pos.mtxLocal.translation.y + deltaY > -2) {
-                  this.pos.mtxLocal.translateY(deltaY);
-                }
-              }
+              //public fall(_deltaTime: number): void {
+               // let g: number = 9.81;
+               // this.ySpeed -= g * _deltaTime;
+                //let deltaY: number = this.ySpeed * _deltaTime;
+                //if (this.pos.mtxLocal.translation.y + deltaY > -2) {
+                 // this.pos.mtxLocal.translateY(deltaY);
+               // }
+             // }
               public collision(): void {
                 let blocks: f.Node = branch.getChildrenByName("Floors")[0];
                 let pos: f.Vector3 = this.pos.mtxLocal.translation;
